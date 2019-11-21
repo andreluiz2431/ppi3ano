@@ -1,5 +1,5 @@
 <?php
-include '../classes/class_forum.php';
+include 'classes/class_forum.php';
 
 $forum = new Forum();
 ?>
