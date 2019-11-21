@@ -1,0 +1,7 @@
+**********************************************************************************************************************
+
+- serie, paralelo e misto SEM numeração, poderá adicionar ou remover a quantidade de resistores
+
+- serie, paralelo e misto COM numeração, terão todos seus atributos pré-definidos menos seus valores
+
+**********************************************************************************************************************
