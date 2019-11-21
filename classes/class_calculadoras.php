@@ -22,13 +22,13 @@ class Calculos{
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista4($res1, $res2, $res3, $res4){ // Misto 2 Função 4
-        $equivalente = $res1 + $res2 + $res3, $res4
+    public function resistenciaEquivalenteMista5($res1, $res2, $res3, $res4){ // Misto 2 Função 4
+        $equivalente = $res1 + $res2 + $res3 + $res4;
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista5($res1, $res2, $res3, $res4){ // Misto 3 Função 1 *******************
-        $equivalente = $res1 + $res2 + $res3, $res4
+    public function resistenciaEquivalenteMista6($res1, $res2, $res3, $res4){ // Misto 3 Função 1 *******************
+        $equivalente = $res1 + $res2 + $res3 + $res4;
         return $equivalente;
     }
 
