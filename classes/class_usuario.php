@@ -9,13 +9,20 @@ class{
 
     public function excluirConta($id){ // TESTAR
         $this->conexao();
-        $sql= $this->pdo->("DELETE FROM usuario WHERE idUsuario=".$id."");
+        try{
+            $sql = $this->pdo->prepare("UPDATE usuario SET nomeUsuario='off' WHERE idUsuario=".$id"");
+            $sql->execute(array(':nomeUsuario' => 'off'));
+
+        }
+        catch(PDOexception $e){// verificação para caso se der errado
+            echo "ERRO:".$e->getMessege();
+        }
         return "Deletado";
     }
 
     public function editar($id, $nome, $email){ // TESTAR
         $this->conexao();
-        $sql=$this->pdo->query("SELECT * FROM usuario");
+        $sql=$this->pdo->query("SELECT * FROM usuario WHERE idUsuario = ".$id."");
         while($linha=$sql->fach(PDO::FECH_ASSOC)){
             $nomeUsuario= $linha['nomeUsuario'];
             $emailUsuario= $linha['emailUsuario'];
@@ -23,7 +30,7 @@ class{
             if ($nome != $nomeUsuario){
                 try{
                     $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario=".$nome." WHERE idUsuario=".$id"");_
-                    $sql1->execute(array(':nomeUsuario' => $nome));
+                        $sql1->execute(array(':nomeUsuario' => $nome));
 
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
@@ -32,7 +39,7 @@ class{
             }elseif ($email != $emailUsuario){
                 try{
                     $sql1= $this->pdo->prepare("UPDATE usuario SET emailUsuario=".$email." WHERE idUsuario=".$id"");_
-                    $sql1->execute(array(':emailUsuario' => $nome));
+                        $sql1->execute(array(':emailUsuario' => $nome));
 
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
@@ -41,8 +48,7 @@ class{
             }elseif($nome != $nomeUsuario && $email != $emailUsuario){
                 try{
                     $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario=".$nome.", emailUsuario=".$email."  WHERE idUsuario=".$id"");_
-                    $sql1->execute(array(':nomeUsuario' => $nome));
-
+                        $sql1->execute(array(':nomeUsuario' => $nome));
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
                     echo "ERRO:".$e->getMessege();
@@ -91,12 +97,6 @@ class{
         }else{
             return "As senhas não correspondem";
         }
-
     }
-
-
 }
-
-
-
 ?>
