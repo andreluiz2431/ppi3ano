@@ -3,7 +3,7 @@ class Forum{
     private $pdo;
 
     private function conexaoBD(){
-        include '../conexaoBD.php';
+        include 'conexaoBD.php';
     }
 
     public function postagem($post, $idUsuario, $idCalc){ // TESTAR
@@ -24,26 +24,21 @@ class Forum{
         }
     }
 
-    public function vizualizarPost($idCircuito){
+    public function vizualizarPost($idCalc){
         $this->conexaoBD();
 
-        $consulta = $this->pdo->query("SELECT * FROM postagem WHERE circuito = ".$idCircuito."");
+        $consulta = $this->pdo->query("SELECT * FROM post WHERE idCalc = ".$idCalc."");
 
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            echo '<fieldset>';
-            echo "$this->idUsuario - Post: {$linha['post']} - Data e Hora: {$linha['dataHora']} - XXXXXX Likes"
-                ."<form method='POST' action='forum.php'><input type='hidden' value='".$linha['idPostagem']."' name='apl'><input type='submit' value='Like'></form>"
-
-                ."<form method='POST' action='forum.php'><input type='hidden' value='".$linha['idPostagem']."' name='apd'><input type='submit' value='Deslike'></form>"
-
-                ."<form method='POST' action='forum.php'><input type='hidden' value='".$linha['idPostagem']."' name='id'><input type='text' name='comentario' placeholder='Resposta...'><input type='submit' value='Comentar'></form>";
-
-            $this->vizualizarComent($linha['idPostagem']);
-
-            echo '</fieldset>';
-
-            echo '<br><br>';
+        $i = 0;
+        while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
+            $array[$i]['idPost'] = $linha['idPost'];
+            $array[$i]['postPost'] = $linha['postPost'];
+            $array[$i]['dataHoraPost'] = $linha['dataHoraPost'];
+            $array[$i]['idUsuario'] = $linha['idUsuario'];
+            $i++;
         }
+
+        return $array;
     }
 
     public function comentarPost($idpost, $coment){       
