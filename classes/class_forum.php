@@ -1,10 +1,5 @@
 <?php
 class Forum{
-    private $host;
-    private $usuario;
-    private $senha;
-    private $bd;
-
     public $circuito;
     public $like;
     public $idUsuario;
@@ -15,16 +10,10 @@ class Forum{
         $this->idUsuario = 1; // desenvolver quando tiver login com session aplicado!
         $this->circuito = 1; // modelar assim que tiver os circuitos no projeto
         $this->like = 0;
-
-        $this->host = 'localhost';
-        $this->usuario = 'root';
-        $this->senha = '';
-        $this->bd = 'ppi3ano';
     }
 
     private function conexaoBD(){
-        $this->pdo = new PDO('mysql:host='.$this->host.';dbname='.$this->bd.'', $this->usuario, $this->senha);
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        include '../conexaoBD.php';
     }
 
     public function postagem($postagem){

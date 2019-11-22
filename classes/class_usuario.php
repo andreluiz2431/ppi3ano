@@ -2,16 +2,17 @@
 class{
     public $pdo;
 
-
     public function conexao(){
-        include 'conexaoBD.php';
+        include '../conexaoBD.php';
         // tudo que precisar da conexao colocar $this->conexao();
     }
+
     public function excluirConta($id){ // TESTAR
         $this->conexao();
         $sql= $this->pdo->("DELETE FROM usuario WHERE idUsuario=".$id."");
         return "Deletado";
     }
+
     public function editar($id, $nome, $email){ // TESTAR
         $this->conexao();
         $sql=$this->pdo->query("SELECT * FROM usuario");
