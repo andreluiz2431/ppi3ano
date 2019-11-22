@@ -6,10 +6,27 @@ class Forum{
         include 'conexaoBD.php';
     }
 
+    public function like(){ // curtir
+
+    }
+
+    public function deslike(){ // desfazer o curtir
+
+    }
+
+    public function hate(){ // não gostar
+
+    }
+
+    public function desHate(){ // desfazer não gostar
+
+    }
+
     public function postagem($post, $idUsuario, $idCalc){ // TESTAR
         date_default_timezone_set('America/Sao_Paulo');
         $dataHora = date('Y-m-d H:i');
 
+        $ver = false;
         try {
             $this->conexaoBD();
 
@@ -18,9 +35,14 @@ class Forum{
                 ':post' => "$post"
             ));
 
-            echo $stmt->rowCount(); 
+            $ver = true;
         } catch(PDOException $e) {
             echo 'Error: ' . $e->getMessage();
+        }
+        if($ver == false){
+            return 'Não postado';
+        }else{
+            return 'Postado';
         }
     }
 
@@ -41,164 +63,45 @@ class Forum{
         return $array;
     }
 
-    public function comentarPost($idpost, $coment){       
+    public function comentarPost($idPost, $coment, $idUsuario){
         date_default_timezone_set('America/Sao_Paulo');
         $dataHora = date('Y-m-d H:i');
 
+        $ver = false;
         try {
             $this->conexaoBD();
 
-            $stmt = $this->pdo->prepare('INSERT INTO comentario (idpost, coment, dataHora, idUsuario) VALUES(:idpost, :coment, :dataHora, :avaliacoes, :idUsuario)');
+            $stmt = $this->pdo->prepare('INSERT INTO comentario (idPost, comentComent, dataHoraComent, idUsuario) VALUES('.$idPost.', "'.$coment.'", "'.$dataHora.'", '$idUsuario')');
             $stmt->execute(array(
-                ':idpost' => "$idpost",
-                ':coment' => "$coment",
-                ':dataHora' => "$dataHora",
-                ':idUsuario' => "$this->idUsuario"
+                ':idpost' => "$idpost"
             ));
 
-            echo $stmt->rowCount(); 
+            $ver = true;
         } catch(PDOException $e) {
             echo 'Error: ' . $e->getMessage();
         }
-    }
-
-    public function vizualizarComent($idpost){
-        $this->conexaoBD();
-
-        $consulta = $this->pdo->query("SELECT * FROM comentario WHERE idpost = '$idpost'");
-
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            echo "$this->idUsuario - Coment: {$linha['coment']} - Data e Hora: {$linha['dataHora']} - XXXXXX Likes <br>"
-
-                ."<form method='POST' action='forum.php'><input type='hidden' value='".$linha['idComentario']."' name='idB'><input type='submit' value='Like'></form>"
-
-                ."<form method='POST' action='forum.php'><input type='hidden' value='".$linha['idComentario']."' name='idB'><input type='submit' value='Deslike'></form>";
+        if($ver == false){
+            return 'Não comentado';
+        }else{
+            return 'Comentado';
         }
     }
 
-    public function avaliacaoPost($idPost){ // fazer like postagem
-        echo 'id post '.$idPost.' | id usuario '.$this->idUsuario.'<br>';
-
+    public function vizualizarComent($idPost){
         $this->conexaoBD();
 
-        $consulta = $this->pdo->query("SELECT id_avaliacao FROM avaliacao WHERE (id_post = '$idPost') AND (id_usuario = '$this->idUsuario')");
+        $consulta = $this->pdo->query("SELECT * FROM coment WHERE idPost = '$idPost'");
 
+        $i = 0;
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            if(isset($linha['id_avaliacao'])){
-                $this->conexaoBD();
-
-                $consulta = $this->pdo->query("DELETE FROM avaliacao WHERE (id_post = '$idPost') AND (id_usuario = '$this->idUsuario')");
-            }
+            $array[$i]['idPost'] = $linha['idPost'];
+            $array[$i]['idComent'] = $linha['idComent'];
+            $array[$i]['comentComent'] = $linha['comentComent'];
+            $array[$i]['dataHoraComent'] = $linha['dataHoraPostComent'];
+            $array[$i]['idUsuario'] = $linha['idUsuario'];
+            $i++;
         }
-
-        try { // NAO FUNFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            $this->conexaoBD();
-
-            $stmt = $this->pdo->prepare("INSERT INTO avaliacao (id_usuario, id_post, id_coment, curtida, descurtida) VALUES (:id_usuario, :id_post, :id_coment, :curtida, :descurtida");
-            $stmt->execute(array(
-                ':id_usuario' => $this->idUsuario,
-                ':id_post' => $idPost,
-                ':id_coment' => "",
-                ':curtida' => "sim",
-                ':descurtida' => "nao"
-            ));
-
-        } catch(PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
-    }
-
-    public function avaliacaoPostN($idPost){ // fazer deslike postagem
-        $this->conexaoBD();
-
-        $consulta = $this->pdo->query("SELECT id_avaliacao FROM avaliacao WHERE id_post = '$idPost', id_usuario = '$this->idUsuario'");
-
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            if(isset($linha['id_avaliacao'])){
-                $this->conexaoBD();
-
-                $consulta = $this->pdo->query("DELETE FROM avaliacao WHERE id_post = '$idPost', id_usuario = '$this->idUsuario'");
-            }
-        }
-
-        try {
-            $this->conexaoBD();
-
-            $stmt = $this->pdo->prepare('INSERT INTO avaliacao(id_usuario, id_post, id_coment, curtida, descurtida) VALUES (:id_usuario, :id_post, :id_coment, :curtida, :descurtida');
-            $stmt->execute(array(
-                ':id_usuario' => $this->idUsuario,
-                ':id_post' => $idPost,
-                ':id_coment' => "",
-                ':curtida' => "nao",
-                ':descurtida' => "sim"
-            ));
-
-            echo $stmt->rowCount(); 
-        } catch(PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
-    }
-
-    public function avaliacaoComent($idComent){ // fazer like comentario
-        $this->conexaoBD();
-
-        $consulta = $this->pdo->query("SELECT id_avaliacao FROM avaliacao WHERE id_coment = '$idComent', id_usuario = '$this->idUsuario'");
-
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            if(isset($linha['id_avaliacao'])){
-                $this->conexaoBD();
-
-                $consulta = $this->pdo->query("DELETE FROM avaliacao WHERE id_coment = '$idComent', id_usuario = '$this->idUsuario'");
-            }
-        }
-
-        try {
-            $this->conexaoBD();
-
-            $stmt = $this->pdo->prepare('INSERT INTO avaliacao(id_usuario, id_post, id_coment, curtida, descurtida) VALUES (:id_usuario, :id_post, :id_coment, :curtida, :descurtida');
-            $stmt->execute(array(
-                ':id_usuario' => $this->idUsuario,
-                ':id_post' => "",
-                ':id_coment' => $idComent,
-                ':curtida' => "sim",
-                ':descurtida' => "nao"
-            ));
-
-            echo $stmt->rowCount(); 
-        } catch(PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
-    }
-
-    public function avaliacaoComentN($idComent){ // fazer deslike comentario
-        $this->conexaoBD();
-
-        $consulta = $this->pdo->query("SELECT id_avaliacao FROM avaliacao WHERE id_coment = '$idComent', id_usuario = '$this->idUsuario'");
-
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            if(isset($linha['id_avaliacao'])){
-                $this->conexaoBD();
-
-                $consulta = $this->pdo->query("DELETE FROM avaliacao WHERE id_coment = '$idComent', id_usuario = '$this->idUsuario'");
-            }
-        }
-
-        try {
-            $this->conexaoBD();
-
-            $stmt = $this->pdo->prepare('INSERT INTO avaliacao(id_usuario, id_post, id_coment, curtida, descurtida) VALUES (:id_usuario, :id_post, :id_coment, :curtida, :descurtida');
-            $stmt->execute(array(
-                ':id_usuario' => $this->idUsuario,
-                ':id_post' => "",
-                ':id_coment' => $idComent,
-                ':curtida' => "nao",
-                ':descurtida' => "sim"
-            ));
-
-            echo $stmt->rowCount(); 
-        } catch(PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
+        return $array;
     }
 }
 ?>
