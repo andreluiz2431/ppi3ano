@@ -54,8 +54,10 @@ class{
     }
 
     public function login($nome, $senha){ // TESTAR
+        $senhaCriptografada = md5($senha);
+
         $this->conexao();
-        $sql= $this->pdo->query("SELECT * FROM usuario");
+        $sql= $this->pdo->query("SELECT * FROM usuario WHERE (nomeUsuario = ".$nome.") AND (senhaUsuario = ".$senhaCriptografada.")");
         $ver = false; // pra caso algum estiver incorreto;
         while($linha=$sql->fach(PDO::FECH_ASSOC)){ // Para fazer o coisa percorrer a variavel e realizar a consulta
             $_SESSION['usuario']= $linha['nomeUsuario'];
@@ -63,31 +65,32 @@ class{
             $_SESSION['email']= $linha['emailUsuario'];
 
             $ver= true;
-            return "Sucesso";
-            echo "<script>window.locantion.href= 'index.php';</script>";
+            echo "<script>window.locantion.href= '../creative/index.php';</script>";
             break;
         }
         if ($ver==false){
-            return "Falha";
+            return "Dados incorretos";
         }
     }
 
     public function cadastro($nome,$email, $senha1, $senha2){ // TESTAR
         if ($senha1 == $senha2){
-            $senha= $senha1;
+            $senhaCriptografada = md5($senha1);
             try{ // usa pra fazer inserção ou update no PDO
                 $this->conexao();
-                $sql= $this->pdo->prepare("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario) VALUES(".$nome.",".$email.",".$senha.")");
+                $sql= $this->pdo->prepare("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario) VALUES(".$nome.",".$email.",".$senhaCriptografada.")");
 
                 $sql->execute(array(':nomeUsuario'=>$nome)); // faz para executar o array em PDO para inserção
 
-                echo "<scipt>window.location.href= index.php</script>"
+                echo "<script>window.locantion.href= '../creative/index.php';</script>";
 
             }
             catch(PDOexception $e){// verificação para caso se der errado
                 echo "ERRO:".$e->getMessege();
             }
-        }else{ return "As senhas não correspondem";}
+        }else{
+            return "As senhas não correspondem";
+        }
 
     }
 
