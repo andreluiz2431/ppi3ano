@@ -12,12 +12,12 @@ class Calculos{
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista3($res1, $res2){ // Misto 2 Função 1 e 3
+    public function resistenciaEquivalenteMista3($res1, $res2){ // Misto 2 Função 1 e 3 | Misto 3 Função 2 e 4
         $equivalente = 1/$equivalente = 1/$res1 + 1/$res2;
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista4($res1, $res2){ // Misto 2 Função 2
+    public function resistenciaEquivalenteMista4($res1, $res2){ // Misto 2 Função 2 | Misto 3 Função 5
         $equivalente = $res1 + $res2;
         return $equivalente;
     }
@@ -27,8 +27,8 @@ class Calculos{
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista6($res1, $res2, $res3, $res4){ // Misto 3 Função 1 *******************
-        $equivalente = $res1 + $res2 + $res3 + $res4;
+    public function resistenciaEquivalenteMista6($res1, $res2, $res3){ // Misto 3 Função 1 e 3
+        $equivalente = $res1 + $res2 + $res3;
         return $equivalente;
     }
 
