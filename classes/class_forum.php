@@ -24,7 +24,7 @@ class Forum{
         }
     }
 
-    public function vizualizarPost($idCalc){
+    public function vizualizarPost($idCalc){ // funciona
         $this->conexaoBD();
 
         $consulta = $this->pdo->query("SELECT * FROM post WHERE idCalc = ".$idCalc."");
