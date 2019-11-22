@@ -1,4 +1,7 @@
 <?php
+header('location: creative/index.html');
+?>
+<!--
 include 'classes/class_forum.php';
 $forum = new Forum();
 $array = $forum->vizualizarPost(1);
@@ -11,7 +14,4 @@ while($i < $array){
         break;
     }
 }
-
-
-//header('location: creative/index.html');
-?>
+ -->
