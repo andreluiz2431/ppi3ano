@@ -7,6 +7,27 @@ class{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
+    public function editarSenha($id, $senhaAtual, $senhaNova){ // TESTAR
+        $this->conexao();
+
+        $ver = false;
+        try{
+            $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNova."' WHERE (idUsuario=".$id") AND (senhaUsuario='".$senhaAtual"')");
+            $sql->execute(array(':senhaUsuario' => "'".$senhaNova."'"));
+
+            $ver = true;
+        }
+        catch(PDOexception $e){// verificação para caso se der errado
+            echo "ERRO:".$e->getMessege();
+        }
+
+        if($ver == false){
+            return 'Não alterado';
+        }else{
+            return 'Alterado';
+        }
+    }
+
     public function excluirConta($id){ // TESTAR
         $this->conexao();
         try{
@@ -29,8 +50,8 @@ class{
 
             if ($nome != $nomeUsuario){
                 try{
-                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario=".$nome." WHERE idUsuario=".$id"");_
-                        $sql1->execute(array(':nomeUsuario' => $nome));
+                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."' WHERE idUsuario=".$id"");_
+                        $sql1->execute(array(':nomeUsuario' => "$nome"));
 
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
@@ -38,8 +59,8 @@ class{
                 }
             }elseif ($email != $emailUsuario){
                 try{
-                    $sql1= $this->pdo->prepare("UPDATE usuario SET emailUsuario=".$email." WHERE idUsuario=".$id"");_
-                        $sql1->execute(array(':emailUsuario' => $nome));
+                    $sql1= $this->pdo->prepare("UPDATE usuario SET emailUsuario='".$email."' WHERE idUsuario=".$id"");_
+                        $sql1->execute(array(':emailUsuario' => "$nome"));
 
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
@@ -47,14 +68,15 @@ class{
                 }
             }elseif($nome != $nomeUsuario && $email != $emailUsuario){
                 try{
-                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario=".$nome.", emailUsuario=".$email."  WHERE idUsuario=".$id"");_
-                        $sql1->execute(array(':nomeUsuario' => $nome));
+                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."', emailUsuario='".$email."'  WHERE idUsuario=".$id"");_
+                        $sql1->execute(array(':nomeUsuario' => "$nome"));
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
                     echo "ERRO:".$e->getMessege();
                 }
-            }else {return "Nenhum dado alterado";}
-
+            }else {
+                return "Nenhum dado alterado";
+            }
         }
 
     }
