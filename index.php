@@ -1,5 +1,5 @@
 <?php
-header('location: creative/index.html');
+header('location: creative/index.php');
 ?>
 <!--
 include 'classes/class_forum.php';
