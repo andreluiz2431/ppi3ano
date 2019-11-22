@@ -61,7 +61,7 @@ class Calculos{
     }
 
     //URI
-    public function correnteURI($r, $u, $i){
+    public function uri($r, $u, $i){
         if(empty($i)){
             $i = $u / $r;
             return $i;
