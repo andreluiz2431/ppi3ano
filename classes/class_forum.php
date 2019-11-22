@@ -6,20 +6,47 @@ class Forum{
         include 'conexaoBD.php';
     }
 
-    public function like(){ // curtir
+    public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
+        // $tipo => se é POST ou COMENT
+        // $like => se é CURTIR ou NÃO GOSTEI
+        $this->conexaoBD();
 
+        $consulta = $this->pdo->query('SELECT * FROM like WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = "'.$like.'")')->rowCount();
+
+        return $consulta;
     }
 
-    public function deslike(){ // desfazer o curtir
+    public function like($idUsuario, $idPostComent, $tipo, $like){ // curtir | não curtir
+        // $tipo => se é POST ou COMENT
+        // $like => se é CURTIR ou NÃO GOSTEI
+        $ver = false;
+        try {
+            $this->conexaoBD();
 
+            $stmt = $this->pdo->prepare('INSERT INTO like (idUsuario, idPostComent, tipoLike, likeLike) VALUES('.$idUsuario.', '.$idPostComent.', "'.$tipo.'", "'.$like.'")');
+            $stmt->execute(array(
+                ':post' => "$post"
+            ));
+
+            $ver = true;
+        } catch(PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+        if($ver == false){
+            return 'Não funcionou';
+        }else{
+            return 'Funcionou';
+        }
     }
 
-    public function hate(){ // não gostar
+    public function deslike($idUsuario, $idPostComent, $tipo, $like){ // desfazer o curtir | não curtir
+        // $tipo => se é POST ou COMENT
+        // $like => se é CURTIR ou NÃO GOSTEI
+        $this->conexaoBD();
 
-    }
+        $stmt = $this->pdo->query('DELETE FROM like WHERE (idUsuario = '.$idUsuario.') AND (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = "'.$like.'")');
 
-    public function desHate(){ // desfazer não gostar
-
+        return 'Deletado';
     }
 
     public function postagem($post, $idUsuario, $idCalc){ // TESTAR
