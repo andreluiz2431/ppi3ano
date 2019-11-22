@@ -1,34 +1,21 @@
 <?php
 class Forum{
-    public $circuito;
-    public $like;
-    public $idUsuario;
-
     private $pdo;
-
-    public function __construct(){
-        $this->idUsuario = 1; // desenvolver quando tiver login com session aplicado!
-        $this->circuito = 1; // modelar assim que tiver os circuitos no projeto
-        $this->like = 0;
-    }
 
     private function conexaoBD(){
         include '../conexaoBD.php';
     }
 
-    public function postagem($postagem){
+    public function postagem($post, $idUsuario, $idCalc){ // TESTAR
         date_default_timezone_set('America/Sao_Paulo');
         $dataHora = date('Y-m-d H:i');
 
         try {
             $this->conexaoBD();
 
-            $stmt = $this->pdo->prepare('INSERT INTO postagem (post, dataHora, idUsuario, circuito) VALUES(:post, :dataHora, :avaliacoes, :idUsuario, :circuito)');
+            $stmt = $this->pdo->prepare('INSERT INTO post (postPost, dataHoraPost, idUsuario, idCalc) VALUES('.$post.', '.$dataHora.', '.$idUsuario.', '.$idCalc.')');
             $stmt->execute(array(
-                ':post' => "$postagem",
-                ':dataHora' => "$dataHora",
-                ':idUsuario' => "$this->idUsuario",
-                ':circuito' => "$this->circuito"
+                ':post' => "$post"
             ));
 
             echo $stmt->rowCount(); 
