@@ -1,33 +1,28 @@
 <?php
 class Calculos{
     // calculos resistencia
-    public function resistenciaEquivalenteMista1($res1, $res2, $res3, $res4){ // Misto 1
+    public function resistenciaEquivalenteMista1($res1, $res2, $res3, $res4){ // Misto 1 Função 1
         $array[0] = $res1 + $res2;
         $array[1] = $res3 + $res4;
         return $array;
     }
 
-    public function resistenciaEquivalenteMista2($serie1, $serie2){ // Misto 1
-        $equivalente = 1/$equivalente = 1/$serie1 + 1/$serie2;
-        return $equivalente;
-    }
-    
-    public function resistenciaEquivalenteMista3($res1, $res2){ // Misto 2 Função 1 e 3 | Misto 3 Função 2 e 4
+    public function resistenciaEquivalenteMista2($res1, $res2){ // Misto 1 Função 2 | Misto 2 Função 1 e 3 | Misto 3 Função 2 e 4
         $equivalente = 1/$equivalente = 1/$res1 + 1/$res2;
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista4($res1, $res2){ // Misto 2 Função 2 | Misto 3 Função 5
+    public function resistenciaEquivalenteMista3($res1, $res2){ // Misto 2 Função 2 | Misto 3 Função 5
         $equivalente = $res1 + $res2;
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista5($res1, $res2, $res3, $res4){ // Misto 2 Função 4
+    public function resistenciaEquivalenteMista4($res1, $res2, $res3, $res4){ // Misto 2 Função 4
         $equivalente = $res1 + $res2 + $res3 + $res4;
         return $equivalente;
     }
     
-    public function resistenciaEquivalenteMista6($res1, $res2, $res3){ // Misto 3 Função 1 e 3
+    public function resistenciaEquivalenteMista5($res1, $res2, $res3){ // Misto 3 Função 1 e 3
         $equivalente = $res1 + $res2 + $res3;
         return $equivalente;
     }
