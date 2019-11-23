@@ -24,22 +24,87 @@ class Usuario{
         }
     }
 
-    public function verAcessos($idUsuario){ //                                   FAZENDO
+    public function verAcessosUsuario($idUsuario){ // TESTAR
         // consultar todos acesso do usuário logado
         $this->conexao();
 
+        $sql=$this->pdo->query("SELECT * FROM acessos WHERE idUsuario = ".$idUsuario."");
+
+        $i = 0;
+        while($linha = $sql->fach(PDO::FECH_ASSOC)){
+            $array[$i]['dataHoraAcesso'] = $linha['dataHoraAcesso'];
+            $array[$i]['idAcesso'] = $linha['idAcesso'];
+
+            $i++;
+        }
+        return $array;
     }
 
-    public function acessoPorDia($idUsuario){ //                                 FAZENDO
-        // consultar quantidade de acessos do usuário logado por dia
+    public function acessosUsuario($idUsuario){ // TESTAR
+        // consultar QUANTIDADE de acessos do usuário logado por dia
         $this->conexao();
 
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE idUsuario = ".$idUsuario."")->rowCount();
+
+        return $sql;
     }
 
-    public function acessoDia($idUsuario, $dia){ // FAZENDO
+    public function verAcessosDia($dia){ // TESTAR
+        // verificar se funciona, pois no BD ta DATE TIME, e ele vai receber apenas em DATE !
+
         // consultar acessos do usuário logado no dia especifico
         $this->conexao();
 
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE dataHoraAcesso = ".$dia."");
+
+        $i = 0;
+        while($linha = $sql->fach(PDO::FECH_ASSOC)){
+            $array[$i]['dataHoraAcesso'] = $linha['dataHoraAcesso'];
+            $array[$i]['idAcesso'] = $linha['idAcesso'];
+
+            $i++;
+        }
+        return $array;
+    }
+
+    public function acessosDia($dia){ // TESTAR
+        // verificar se funciona, pois no BD ta DATE TIME, e ele vai receber apenas em DATE !
+
+        // consultar QUANTIDADE de acessos no dia especifico
+        $this->conexao();
+
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE dataHoraAcesso = ".$dia."")->rowCount();
+
+        return $sql;
+    }
+
+    public function verAcessosDiaUsuario($idUsuario, $dia){ // TESTAR
+        // verificar se funciona, pois no BD ta DATE TIME, e ele vai receber apenas em DATE !
+
+        // consultar acessos do usuário logado no dia especifico
+        $this->conexao();
+
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE (idUsuario = ".$idUsuario.") AND (dataHoraAcesso = ".$dia.")");
+
+        $i = 0;
+        while($linha = $sql->fach(PDO::FECH_ASSOC)){
+            $array[$i]['dataHoraAcesso'] = $linha['dataHoraAcesso'];
+            $array[$i]['idAcesso'] = $linha['idAcesso'];
+
+            $i++;
+        }
+        return $array;
+    }
+
+    public function acessosDiaUsuario($idUsuario, $dia){ // TESTAR
+        // verificar se funciona, pois no BD ta DATE TIME, e ele vai receber apenas em DATE !
+
+        // consultar QUANTIDADE de acessos do usuário logado no dia especifico
+        $this->conexao();
+
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE (idUsuario = ".$idUsuario.") AND (dataHoraAcesso = ".$dia.")")->rowCount();
+
+        return $sql;
     }
 
     public function verificarLogado(){ // TESTAR             Instanciar em todas as telas menos no Login e Cadastro
