@@ -1,6 +1,6 @@
 <?php
 class{
-    public $pdo;
+    private $pdo;
 
     public function conexao(){
         include '../conexaoBD.php';
