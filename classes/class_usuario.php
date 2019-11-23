@@ -7,7 +7,7 @@ class Usuario{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
-    private function inserirAcesso($idUsuario){
+    private function inserirAcesso($idUsuario){ //                               FAZENDO
         // Pegar dia e hora atual
         date_default_timezone_set('America/Sao_Paulo');
         $dataHoraAtual = date('Y-m-d H:i');
@@ -17,19 +17,19 @@ class Usuario{
 
     }
 
-    public function verAcessos($idUsuario){
+    public function verAcessos($idUsuario){ //                                   FAZENDO
         // consultar todos acesso do usuário logado
         $this->conexao();
 
     }
 
-    public function acessoPorDia($idUsuario){
+    public function acessoPorDia($idUsuario){ //                                 FAZENDO
         // consultar quantidade de acessos do usuário logado por dia
         $this->conexao();
 
     }
 
-    public function acessoDia($idUsuario, $dia){
+    public function acessoDia($idUsuario, $dia){ // FAZENDO
         // consultar acessos do usuário logado no dia especifico
         $this->conexao();
 
