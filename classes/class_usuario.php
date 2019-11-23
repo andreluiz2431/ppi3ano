@@ -7,6 +7,30 @@ class{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
+    private function inserirAcesso($idUsuario){
+        // Pegar dia e hora atual
+        date_default_timezone_set('America/Sao_Paulo');
+        $dataHoraAtual = date('Y-m-d H:i');
+
+        // fazer inserção de acesso do usuário logado
+
+    }
+
+    public function verAcessos($idUsuario){
+        // consultar todos acesso do usuário logado
+
+    }
+
+    public function acessoPorDia($idUsuario){
+        // consultar quantidade de acessos do usuário logado por dia
+
+    }
+
+    public function acessoDia($idUsuario, $dia){
+        // consultar acessos do usuário logado no dia especifico
+
+    }
+
     public function verificarLogado(){ // TESTAR             Instanciar em todas as telas menos no Login e Cadastro
         if(empty($_SESSION['usuario'])){
             echo '<a class="nav-link js-scroll-trigger" href="../sb-admin-2/index.php">Login</a>';
