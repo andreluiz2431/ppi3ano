@@ -14,12 +14,16 @@ class{
     }
 
     public function editarSenha($id, $senhaAtual, $senhaNova){ // TESTAR
+        //criptografia
+        $senhaAtualCriptografada = md5($senhaAtual);
+        $senhaNovaCriptografada = md5($senhaNova);
+
         $this->conexao();
 
         $ver = false;
         try{
-            $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNova."' WHERE (idUsuario=".$id") AND (senhaUsuario='".$senhaAtual"')");
-            $sql->execute(array(':senhaUsuario' => "'".$senhaNova."'"));
+            $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNovaCriptografada."' WHERE (idUsuario=".$id") AND (senhaUsuario='".$senhaAtualCriptografada"')");
+            $sql->execute(array(':senhaUsuario' => "'".$senhaNovaCriptografada."'"));
 
             $ver = true;
         }
