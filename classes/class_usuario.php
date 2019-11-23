@@ -55,7 +55,7 @@ class Usuario{
         // consultar acessos do usuário logado no dia especifico
         $this->conexao();
 
-        $sql = $this->pdo->query("SELECT * FROM acessos WHERE dataHoraAcesso = ".$dia."");
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE dataHoraAcesso = '".$dia."'");
 
         $i = 0;
         while($linha = $sql->fach(PDO::FECH_ASSOC)){
@@ -73,7 +73,7 @@ class Usuario{
         // consultar QUANTIDADE de acessos no dia especifico
         $this->conexao();
 
-        $sql = $this->pdo->query("SELECT * FROM acessos WHERE dataHoraAcesso = ".$dia."")->rowCount();
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE dataHoraAcesso = '".$dia."'")->rowCount();
 
         return $sql;
     }
@@ -84,7 +84,7 @@ class Usuario{
         // consultar acessos do usuário logado no dia especifico
         $this->conexao();
 
-        $sql = $this->pdo->query("SELECT * FROM acessos WHERE (idUsuario = ".$idUsuario.") AND (dataHoraAcesso = ".$dia.")");
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE (idUsuario = ".$idUsuario.") AND (dataHoraAcesso = '".$dia."')");
 
         $i = 0;
         while($linha = $sql->fach(PDO::FECH_ASSOC)){
@@ -102,7 +102,7 @@ class Usuario{
         // consultar QUANTIDADE de acessos do usuário logado no dia especifico
         $this->conexao();
 
-        $sql = $this->pdo->query("SELECT * FROM acessos WHERE (idUsuario = ".$idUsuario.") AND (dataHoraAcesso = ".$dia.")")->rowCount();
+        $sql = $this->pdo->query("SELECT * FROM acessos WHERE (idUsuario = ".$idUsuario.") AND (dataHoraAcesso = '".$dia."')")->rowCount();
 
         return $sql;
     }
