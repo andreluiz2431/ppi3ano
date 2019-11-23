@@ -116,8 +116,17 @@ class{
 
                 $sql->execute(array(':nomeUsuario'=>$nome)); // faz para executar o array em PDO para inserção
 
-                echo "<script>window.locantion.href= '../creative/index.php';</script>";
+                $_SESSION['usuario']= $nome;
+                $_SESSION['email']= $email;
 
+                // pegar id do usuario
+                $this->conexao();
+                $sql1= $this->pdo->query("SELECT * FROM usuario WHERE (nomeUsuario = ".$nome.") AND (senhaUsuario = ".$senhaCriptografada.")");
+                while($linha=$sql1->fach(PDO::FECH_ASSOC)){
+                    $_SESSION['id']= $linha['idUsuario'];
+
+                    echo "<script>window.locantion.href= '../creative/index.php';</script>";
+                }
             }
             catch(PDOexception $e){// verificação para caso se der errado
                 echo "ERRO:".$e->getMessege();
