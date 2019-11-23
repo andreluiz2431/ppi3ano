@@ -7,6 +7,12 @@ class{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
+    public function verificarLogado(){
+        if(empty($_SESSION['usuario'])){
+            echo '<a class="nav-link js-scroll-trigger" href="../sb-admin-2/index.php">Login</a>';
+        }
+    }
+
     public function editarSenha($id, $senhaAtual, $senhaNova){ // TESTAR
         $this->conexao();
 
