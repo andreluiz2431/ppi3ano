@@ -7,14 +7,21 @@ class Usuario{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
-    private function inserirAcesso($idUsuario){ //                               FAZENDO
+    private function inserirAcesso($idUsuario){ //                               TESTAR
         // Pegar dia e hora atual
         date_default_timezone_set('America/Sao_Paulo');
         $dataHoraAtual = date('Y-m-d H:i');
 
         // fazer inserção de acesso do usuário logado
-        $this->conexao();
+        try{
+            $this->conexao();
+            $sql= $this->pdo->prepare("INSERT INTO acessos(dataHoraAcesso, idUsuario) VALUES('".$dataHoraAtual."',".$idUsuario.")");
 
+            $sql->execute(array(':dataHoraAcesso'=>$dataHoraAtual)); // faz para executar o array em PDO para inserção
+
+        }catch(PDOexception $e){// verificação para caso se der errado
+            echo "ERRO:".$e->getMessege();
+        }
     }
 
     public function verAcessos($idUsuario){ //                                   FAZENDO
@@ -159,8 +166,7 @@ class Usuario{
 
                     echo "<script>window.locantion.href= '../creative/index.php';</script>";
                 }
-            }
-            catch(PDOexception $e){// verificação para caso se der errado
+            }catch(PDOexception $e){// verificação para caso se der errado
                 echo "ERRO:".$e->getMessege();
             }
         }else{
