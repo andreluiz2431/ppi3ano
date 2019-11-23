@@ -1,8 +1,8 @@
 <?php
-class{
+class Usuario{
     private $pdo;
 
-    public function conexao(){
+    private function conexao(){
         include '../conexaoBD.php';
         // tudo que precisar da conexao colocar $this->conexao();
     }
@@ -13,21 +13,25 @@ class{
         $dataHoraAtual = date('Y-m-d H:i');
 
         // fazer inserção de acesso do usuário logado
+        $this->conexao();
 
     }
 
     public function verAcessos($idUsuario){
         // consultar todos acesso do usuário logado
+        $this->conexao();
 
     }
 
     public function acessoPorDia($idUsuario){
         // consultar quantidade de acessos do usuário logado por dia
+        $this->conexao();
 
     }
 
     public function acessoDia($idUsuario, $dia){
         // consultar acessos do usuário logado no dia especifico
+        $this->conexao();
 
     }
 
