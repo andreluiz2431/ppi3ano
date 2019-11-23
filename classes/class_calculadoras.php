@@ -1,7 +1,7 @@
 <?php
 class Calculos{
     // calculos resistencia
-    public function resistenciaEquivalenteMista1($res1, $res2, $res3, $res4){ // Misto 1 Função 1
+    public function resistenciaEquivalenteMista1($res1, $res2, $res3, $res4){ // Misto 1 Função 1 (2 séries)
         $array[0] = $res1 + $res2;
         $array[1] = $res3 + $res4;
         return $array;
