@@ -7,7 +7,7 @@ class Usuario{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
-    private function inserirAcesso($idUsuario){ //                               TESTAR
+    private function inserirAcesso($idUsuario){ // TESTAR
         // Pegar dia e hora atual
         date_default_timezone_set('America/Sao_Paulo');
         $dataHoraAtual = date('Y-m-d H:i');
@@ -203,6 +203,9 @@ class Usuario{
             $_SESSION['email']= $linha['emailUsuario'];
 
             $ver= true;
+
+            $this->inserirAcesso($linha['idUsuario']);
+
             echo "<script>window.locantion.href= '../creative/index.php';</script>";
             break;
         }
@@ -228,6 +231,8 @@ class Usuario{
                 $sql1= $this->pdo->query("SELECT * FROM usuario WHERE (nomeUsuario = ".$nome.") AND (senhaUsuario = ".$senhaCriptografada.")");
                 while($linha=$sql1->fach(PDO::FECH_ASSOC)){
                     $_SESSION['id']= $linha['idUsuario'];
+
+                    $this->inserirAcesso($linha['idUsuario']);
 
                     echo "<script>window.locantion.href= '../creative/index.php';</script>";
                 }
