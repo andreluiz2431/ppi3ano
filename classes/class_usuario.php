@@ -7,7 +7,7 @@ class{
         // tudo que precisar da conexao colocar $this->conexao();
     }
 
-    public function verificarLogado(){
+    public function verificarLogado(){ // TESTAR             Instanciar em todas as telas menos no Login e Cadastro
         if(empty($_SESSION['usuario'])){
             echo '<a class="nav-link js-scroll-trigger" href="../sb-admin-2/index.php">Login</a>';
         }
