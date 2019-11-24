@@ -5,4 +5,7 @@ $user = 'root';
 $senha = '';
 $this->pdo = new PDO('mysql:host='.$host.';dbname='.$bd.'',$user,$senha);
 $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// teste
+//d,sa,lpd,sapdas
+//dasmdkoasmdas
 ?>
