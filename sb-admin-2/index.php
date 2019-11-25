@@ -51,7 +51,7 @@ session_start();
                                     </div>
                                     <form class="user" method="post" action="index.php">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="email" placeholder="Digite seu E-mail">
+                                            <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="nome" placeholder="Digite seu nome de usuário">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Digite sua senha" name="senha">
@@ -86,10 +86,20 @@ session_start();
 
 </html>
 <?php
-include '../classes/class_usuario.php';
+if(!empty($_POST["nome"])){
 
-if(!empty($_POST["email"])){
+    include "../classes/class_usuario.php";
+
     $usuario = new Usuario();
-    $usuario->login();
+
+    $nome = $_POST["nome"];
+    $senha = $_POST["senha"];
+
+    $saida = $usuario->login($nome, $senha);
+
+    if($saida == "Dados incorretos"){
+        echo "<script>alert('".$saida."');</script>";
+    }
+
 }
 ?>

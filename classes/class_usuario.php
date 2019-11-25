@@ -195,21 +195,21 @@ class Usuario{
         $senhaCriptografada = md5($senha);
 
         $this->conexao();
-        $sql= $this->pdo->query("SELECT * FROM usuario WHERE (nomeUsuario = ".$nome.") AND (senhaUsuario = ".$senhaCriptografada.")");
+        $sql= $this->pdo->query("SELECT * FROM usuario WHERE (nomeUsuario = '".$nome."') AND (senhaUsuario = '".$senhaCriptografada."')");
         $ver = false; // pra caso algum estiver incorreto;
-        while($linha=$sql->fach(PDO::FECH_ASSOC)){ // Para fazer o coisa percorrer a variavel e realizar a consulta
-            $_SESSION['usuario']= $linha['nomeUsuario'];
-            $_SESSION['id']= $linha['idUsuario'];
-            $_SESSION['email']= $linha['emailUsuario'];
+        while($linha=$sql->fetch(PDO::FETCH_ASSOC)){ // Para fazer o coisa percorrer a variavel e realizar a consulta
+            $_SESSION['usuario'] = $linha['nomeUsuario'];
+            $_SESSION['id'] = $linha['idUsuario'];
+            $_SESSION['email'] = $linha['emailUsuario'];
 
-            $ver= true;
+            $ver = true;
 
             $this->inserirAcesso($linha['idUsuario']);
 
-            echo "<script>window.locantion.href= '../creative/index.php';</script>";
+            echo "<script>window.location.href= '../creative/index.php';</script>";
             break;
         }
-        if ($ver==false){
+        if ($ver == false){
             return "Dados incorretos";
         }
     }
