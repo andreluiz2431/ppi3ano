@@ -27,6 +27,11 @@
                 color: rgb(103,68,2);
                 color: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 20%, rgba(177,115,0,1) 44%, rgba(195,126,0,1) 55%, rgba(215,139,0,1) 68%, rgba(255,196,0,1) 100%);
             }
+            #btn-gradiente{
+                background: rgb(103,68,2);
+                background: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 0%, rgba(177,115,0,1) 11%, rgba(255,169,12,1) 100%, rgba(215,139,0,1) 100%, rgba(255,196,0,1) 100%);
+                color: white;
+            }
         </style>
 
     </head>
@@ -62,7 +67,7 @@
                                                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" title="Digite sua senha novamente" placeholder="Verifique a senha" name="senha2">
                                                 </div>
                                             </div>
-                                            <input type="submit" class="btn btn-user btn-block" id="gradiente" value="Cadastrar" title="Fazer login">
+                                            <input type="submit" class="btn btn-user btn-block" id="btn-gradiente" value="Cadastrar" title="Fazer login">
 
                                         </div>
                                         <hr>

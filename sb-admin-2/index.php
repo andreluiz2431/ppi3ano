@@ -31,6 +31,11 @@ session_start();
                 color: rgb(103,68,2);
                 color: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 20%, rgba(177,115,0,1) 44%, rgba(195,126,0,1) 55%, rgba(215,139,0,1) 68%, rgba(255,196,0,1) 100%);
             }
+            #btn-gradiente{
+                background: rgb(103,68,2);
+                background: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 0%, rgba(177,115,0,1) 11%, rgba(255,169,12,1) 100%, rgba(215,139,0,1) 100%, rgba(255,196,0,1) 100%);
+                color: white;
+            }
         </style>
 
     </head>
@@ -61,7 +66,7 @@ session_start();
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Digite sua senha" name="senha">
                                         </div>
-                                        <input type="submit"  id="gradiente" class="btn btn-user btn-block" value="Login">
+                                        <input type="submit"  id="btn-gradiente" class="btn btn-user btn-block" value="Login">
                                         <hr>
                                     </form>
                                     <div class="text-center">
