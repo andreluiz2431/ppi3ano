@@ -122,7 +122,7 @@ class Usuario{
 
         $ver = false;
         try{
-            $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNovaCriptografada."' WHERE (idUsuario=".$id") AND (senhaUsuario='".$senhaAtualCriptografada"')");
+            $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNovaCriptografada."' WHERE (idUsuario=".$id.") AND (senhaUsuario='".$senhaAtualCriptografada."')");
             $sql->execute(array(':senhaUsuario' => "'".$senhaNovaCriptografada."'"));
 
             $ver = true;
@@ -141,7 +141,7 @@ class Usuario{
     public function excluirConta($id){ // TESTAR
         $this->conexao();
         try{
-            $sql = $this->pdo->prepare("UPDATE usuario SET nomeUsuario='off' WHERE idUsuario=".$id"");
+            $sql = $this->pdo->prepare("UPDATE usuario SET nomeUsuario='off' WHERE idUsuario=".$id."");
             $sql->execute(array(':nomeUsuario' => 'off'));
 
         }
@@ -160,8 +160,8 @@ class Usuario{
 
             if ($nome != $nomeUsuario){
                 try{
-                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."' WHERE idUsuario=".$id"");_
-                        $sql1->execute(array(':nomeUsuario' => "$nome"));
+                    $sql1 = $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."' WHERE idUsuario=".$id."");
+                    $sql1->execute(array(':nomeUsuario' => "$nome"));
 
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
@@ -169,8 +169,8 @@ class Usuario{
                 }
             }elseif ($email != $emailUsuario){
                 try{
-                    $sql1= $this->pdo->prepare("UPDATE usuario SET emailUsuario='".$email."' WHERE idUsuario=".$id"");_
-                        $sql1->execute(array(':emailUsuario' => "$nome"));
+                    $sql1= $this->pdo->prepare("UPDATE usuario SET emailUsuario='".$email."' WHERE idUsuario=".$id."");
+                    $sql1->execute(array(':emailUsuario' => "$nome"));
 
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
@@ -178,7 +178,7 @@ class Usuario{
                 }
             }elseif($nome != $nomeUsuario && $email != $emailUsuario){
                 try{
-                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."', emailUsuario='".$email."'  WHERE idUsuario=".$id"");_
+                    $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."', emailUsuario='".$email."'  WHERE idUsuario=".$id."");
                         $sql1->execute(array(':nomeUsuario' => "$nome"));
                 }
                 catch(PDOexception $e){// verificação para caso se der errado

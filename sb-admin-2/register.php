@@ -93,7 +93,7 @@ if(!empty($_POST["nome"])){
 
     if($_POST["senha"] == $_POST["senha2"]){
 
-        include "class_usuario.php";
+        include "../classes/class_usuario.php";
 
         $usuario = new Usuario();
 
