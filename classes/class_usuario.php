@@ -191,7 +191,7 @@ class Usuario{
 
     }
 
-    public function login($nome, $senha){ // TESTAR
+    public function login($nome, $senha){
         $senhaCriptografada = md5($senha);
 
         $this->conexao();
@@ -214,7 +214,7 @@ class Usuario{
         }
     }
 
-    public function cadastro($nome,$email, $senha1, $senha2){ // TESTAR
+    public function cadastro($nome,$email, $senha1, $senha2){
 
         if ($senha1 == $senha2){
             $senhaCriptografada = md5($senha1);
