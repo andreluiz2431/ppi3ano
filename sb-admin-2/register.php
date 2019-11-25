@@ -83,24 +83,30 @@
 
             <!-- Custom scripts for all pages-->
             <script src="js/sb-admin-2.min.js"></script>
+        </div>
 
-            </body>
+    </body>
 
-        </html>
-    <?php
-    if(!empty($_POST["nome"])){
+</html>
+<?php
+if(!empty($_POST["nome"])){
 
-        if($_POST["senha"] == $_POST["senha2"]){
+    if($_POST["senha"] == $_POST["senha2"]){
 
-            include "class_usuario.php";
+        include "class_usuario.php";
 
-            $usuario = new Usuario();
+        $usuario = new Usuario();
 
-            $usuario->nome = $_POST["nome"];
-            $usuario->email = $_POST["email"];
-            $usuario->senha = md5($_POST["senha"]);
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $senha1 = $_POST["senha"];
+        $senha2 = $_POST["senha2"];
 
-            $usuario->inserir();
+        $saida = $usuario->cadastro($nome,$email, $senha1, $senha2);
+
+        if($saida == "As senhas não correspondem"){
+            echo "<script>alert('".$saida."');</script>";
         }
     }
-    ?>
+}
+?>
