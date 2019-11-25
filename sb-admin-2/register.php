@@ -19,8 +19,13 @@
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
         <style>
             #gradiente{
-                background: rgb(9,0,0);
-                background: linear-gradient(145deg, rgba(9,0,0,1) 0%, rgba(46,19,1,1) 0%, rgba(187,90,5,1) 46%, rgba(246,120,6,1) 81%, rgba(249,162,83,1) 100%, rgba(255,255,255,1) 100%);
+                background: rgb(103,68,2);
+                background: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 20%, rgba(177,115,0,1) 44%, rgba(195,126,0,1) 55%, rgba(215,139,0,1) 68%, rgba(255,196,0,1) 100%);
+                color: white;
+            }
+            #letrasG{
+                color: rgb(103,68,2);
+                color: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 20%, rgba(177,115,0,1) 44%, rgba(195,126,0,1) 55%, rgba(215,139,0,1) 68%, rgba(255,196,0,1) 100%);
             }
         </style>
 
@@ -41,7 +46,7 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Cria sua conta!</h1>
+                                        <h1 class="h4 mb-4" id="letrasG">Cria sua conta!</h1>
                                     </div>
                                     <form class="user" method="POST" action="register.php">
                                         <div class="form-group">
@@ -57,12 +62,12 @@
                                                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" title="Digite sua senha novamente" placeholder="Verifique a senha" name="senha2">
                                                 </div>
                                             </div>
-                                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" title="Fazer login">
+                                            <input type="submit" class="btn btn-user btn-block" id="gradiente" value="Cadastrar" title="Fazer login">
 
-                                            </form>
+                                        </div>
                                         <hr>
                                         <div class="text-center">
-                                            <a class="small" href="index.php">Já possui uma conta? Login!</a>
+                                            <a class="small" href="index.php" id="letrasG">Já possui uma conta? Login!</a>
                                         </div>
                                     </form>
                                 </div>
