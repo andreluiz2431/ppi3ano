@@ -179,7 +179,7 @@ class Usuario{
             }elseif($nome != $nomeUsuario && $email != $emailUsuario){
                 try{
                     $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."', emailUsuario='".$email."'  WHERE idUsuario=".$id."");
-                        $sql1->execute(array(':nomeUsuario' => "$nome"));
+                    $sql1->execute(array(':nomeUsuario' => "$nome"));
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
                     echo "ERRO:".$e->getMessege();
@@ -215,29 +215,29 @@ class Usuario{
     }
 
     public function cadastro($nome,$email, $senha1, $senha2){ // TESTAR
+
         if ($senha1 == $senha2){
             $senhaCriptografada = md5($senha1);
+
             try{ // usa pra fazer inserção ou update no PDO
                 $this->conexao();
-                $sql= $this->pdo->prepare("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario) VALUES(".$nome.",".$email.",".$senhaCriptografada.")");
-
-                $sql->execute(array(':nomeUsuario'=>$nome)); // faz para executar o array em PDO para inserção
+                $sql= $this->pdo->prepare("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario) VALUES(:nomeUsuario,'".$email."','".$senhaCriptografada."')");
+                $sql->execute(array(':nomeUsuario' => "$nome")); // faz para executar o array em PDO para inserção
 
                 $_SESSION['usuario']= $nome;
                 $_SESSION['email']= $email;
 
                 // pegar id do usuario
-                $this->conexao();
-                $sql1= $this->pdo->query("SELECT * FROM usuario WHERE (nomeUsuario = ".$nome.") AND (senhaUsuario = ".$senhaCriptografada.")");
-                while($linha=$sql1->fach(PDO::FECH_ASSOC)){
-                    $_SESSION['id']= $linha['idUsuario'];
 
-                    $this->inserirAcesso($linha['idUsuario']);
+                $_SESSION['id'] = $this->pdo->lastInsertId();
 
-                    echo "<script>window.locantion.href= '../creative/index.php';</script>";
-                }
-            }catch(PDOexception $e){// verificação para caso se der errado
-                echo "ERRO:".$e->getMessege();
+                $this->inserirAcesso($_SESSION['id']);
+
+                echo "<script>window.location.href = '../creative/index.php';</script>";
+
+            }catch(PDOException $e) {
+                echo 'Error: ' . $e->getMessage();
+                return -1;
             }
         }else{
             return "As senhas não correspondem";
