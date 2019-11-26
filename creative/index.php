@@ -237,7 +237,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12 ml-auto text-center mb-5 mb-lg-0">
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="../forum.php">Iniciar</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="forum.php">Iniciar</a>
         </div>
       </div>
     </div>

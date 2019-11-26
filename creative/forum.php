@@ -5,73 +5,125 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
 
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-  <title>Forúm</title>
-<!--  BOOTSTRAP NORMAL -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+        <title>Forúm</title>
 
 
-  <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <!-- Font Awesome Icons -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/creative.min.css" rel="stylesheet">
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-</head>
+        <!-- Theme CSS - Includes Bootstrap -->
+        <link href="css/creative.min.css" rel="stylesheet">
 
-<body id="page-top">
+    </head>
 
-        <?php
-    include '../navbar.php';
-    ?>
-        <form method="post" action="forum.php">
-            <input type="text" name="postagem" placeholder="Faça sua pergunta..." title="Postagem">
-            <input type="submit" value="->">
-        </form>
+    <body id="page-top">
 
         <?php
-
+        include '../navbar.php';
         ?>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+
+
+                <div class="col-md-10" style="margin-top: 90px;">
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+                        <div class="row">
+                            <div class="flex-column">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">URI</a>
+
+                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Resistencia Série</a>
+
+                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Resistencia Paraleleo</a>
+
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Resistencia Misto</a>
+
+                                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-settings" aria-selected="false">PRI</a>
+
+                                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pur" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUR</a>
+
+                                       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pui" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUI</a>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><form method="post" action="forum.php">
+                                        <input type="text" name="postagem" placeholder="Faça sua pergunta..." title="Postagem">
+                                        <input type="submit" value="->">
+                                        </form></div>
+
+                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+
+                                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+
+                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                                     <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                                      <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                                       <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-1">
+                </div>
 
 
 
 
+                <?php
+
+                ?>
+
+
+
+            </div>
+        </div>
 
         <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
-    </div>
-  </footer>
+        <footer class="bg-light py-5">
+            <div class="container">
+                <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+            </div>
+        </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+        <!-- Custom scripts for this template -->
+        <script src="js/creative.min.js"></script>
 
-<!--     BOOTSTRAP NORMAL-->
-   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+
     </body>
 </html>
