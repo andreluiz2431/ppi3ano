@@ -92,26 +92,13 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- CIRCUITOS -->
   <section id="portfolio">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Circuito Série
-              </div>
-              <div class="project-name">
-                2 Resistores - 1 Bateria
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/serie_1.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Série
@@ -123,92 +110,105 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/serie_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Série
               </div>
               <div class="project-name">
-                3 Resistores - 2 Baterias
+                7 Resistores - 1 Bateria
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/serie_3.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Circuito Série
+              </div>
+              <div class="project-name">
+                5 Resistores - 1 Baterias
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/paralelo_1.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Paralela
               </div>
               <div class="project-name">
-                Project Name
+               3 Resistores - 1 Baterias
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/paralelo_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Paralela
               </div>
               <div class="project-name">
-                Project Name
+                4 Resistores - 1 Baterias
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/paralelo_3.png" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
                 Circuito Paralela
               </div>
               <div class="project-name">
-                Project Name
+                5 Resistores - 1 Baterias
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/misto_1.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Misto
               </div>
               <div class="project-name">
-                Project Name
+               8 Resistores - 1 Baterias
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/misto_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Misto
               </div>
               <div class="project-name">
-                Project Name
+                7 Resistores - 1 Baterias
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+          <a class="portfolio-box" href="">
+            <img class="img-fluid" src="circuitos_img/misto_3.png" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
                 Circuito Misto
               </div>
               <div class="project-name">
-                Project Name
+                4 Resistores - 1 Baterias
               </div>
             </div>
           </a>
