@@ -35,7 +35,7 @@
     <body id="page-top">
 
         <?php
-        include '../navbar.php';
+        include '../navbar.php'; // ELA ETSA ALI SÓ ESTA BRANCA MSM
         ?>
         <div class="container-fluid">
             <div class="row">
