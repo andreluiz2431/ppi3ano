@@ -13,7 +13,9 @@
         
         $calculadora = new Calculos();
         
-        echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
+        if(!empty($c)){
+            echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
+        }
         ?>
     </body>
 </html>
