@@ -77,71 +77,71 @@
                                 <div class="tab-content" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                         <form method="post" action="forum.php">
-                                            <div style="width: 300px">
-                                                <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem">
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="material-icons">
+                                                        send
+                                                        </i></button>
+                                                </div>
                                             </div>
-
-                                           <button type="submit" class="btn btn-primary">
-                                               <i class="material-icons">
-                                                send
-                                            </i>
-
-                                           </button>
                                         </form>
                                     </div>
-
-                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-
-                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-
-                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-
-                                    <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-
-                                    <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-
-                                    <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                                 </div>
+
+
+                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+
+                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+
+                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                                <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                                <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                                <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                             </div>
                         </div>
-
-
                     </div>
+
+
                 </div>
-
-
-                <div class="col-md-1">
-                </div>
-
-
-
-
-                <?php
-
-                ?>
-
-
-
             </div>
+
+
+            <div class="col-md-1">
+            </div>
+
+
+
+
+            <?php
+
+            ?>
+
+
+
+        </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="bg-light py-5">
-            <div class="container">
-                <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
-            </div>
-        </footer>
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+        </div>
+    </footer>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-        <!-- Custom scripts for this template -->
-        <script src="js/creative.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
 
 
     </body>
