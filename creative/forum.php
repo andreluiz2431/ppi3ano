@@ -28,13 +28,24 @@
         <!-- Theme CSS - Includes Bootstrap -->
         <link href="css/creative.min.css" rel="stylesheet">
 
+        <style>
+            .navbarForum{
+                background-color: #F47E1A;
+                height: 70px;
+            }
+        </style>
+
     </head>
 
     <body id="page-top">
 
-        <?php
-        include '../navbar.php'; // ELA ETSA ALI SÓ ESTA BRANCA MSM
-        ?>
+        <div class="navbarForum">
+            <?php
+            include '../navbar.php'; // ELA ETSA ALI SÓ ESTA BRANCA MSM
+            ?>
+        </div>
+
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1">
@@ -54,11 +65,11 @@
 
                                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Resistencia Misto</a>
 
-                                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-settings" aria-selected="false">PRI</a>
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-settings" aria-selected="false">PRI</a>
 
-                                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pur" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUR</a>
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pur" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUR</a>
 
-                                       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pui" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUI</a>
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pui" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUI</a>
                                 </div>
                             </div>
                             <div class="col-9">
@@ -70,15 +81,15 @@
 
                                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
 
-                                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
 
                                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
 
-                                     <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
 
-                                      <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
 
-                                       <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                                 </div>
                             </div>
                         </div>
