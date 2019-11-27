@@ -8,16 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+                    <a class="nav-link js-scroll-trigger" href="../creative/index.php#about">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Circuitos</a>
+                    <a class="nav-link js-scroll-trigger" href="../creative/index.php../creative/index.php#portfolio">Circuitos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Calculadoras</a>
+                    <a class="nav-link js-scroll-trigger" href="../creative/index.php#services">Calculadoras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Fórum</a>
+                    <a class="nav-link js-scroll-trigger" href="../creative/index.php#contact">Fórum</a>
                 </li>
                 <li class="nav-item">
                     <?php
