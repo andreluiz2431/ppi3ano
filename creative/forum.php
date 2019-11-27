@@ -15,8 +15,6 @@
 
         <title>Forúm</title>
 
-
-
         <!-- Font Awesome Icons -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -30,9 +28,17 @@
         <!-- Theme CSS - Includes Bootstrap -->
         <link href="css/creative.min.css" rel="stylesheet">
 
+        <style>
+            #gradiente{
+                background: rgb(103,68,2);
+                background: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 20%, rgba(177,115,0,1) 44%, rgba(195,126,0,1) 55%, rgba(215,139,0,1) 68%, rgba(255,196,0,1) 100%);
+                color: white;
+            }
+        </style>
+
     </head>
 
-    <body id="page-top">
+    <body id="page-top" id="gradiente">
 
         <?php
         include '../navbar.php'; // ELA ETSA ALI SÓ ESTA BRANCA MSM
@@ -41,7 +47,6 @@
             <div class="row">
                 <div class="col-md-1">
                 </div>
-
 
                 <div class="col-md-10" style="margin-top: 90px;">
                     <div class="shadow p-3 mb-5 bg-white rounded">
