@@ -74,10 +74,20 @@
                             </div>
                             <div class="col-9">
                                 <div class="tab-content" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><form method="post" action="forum.php">
-                                        <input type="text" name="postagem" placeholder="Faça sua pergunta..." title="Postagem">
-                                        <input type="submit" value="->">
-                                        </form></div>
+                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                        <form method="post" action="forum.php">
+                                            <div style="width: 300px">
+                                                <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem">
+                                            </div>
+
+                                           <button type="submit" class="btn btn-primary">
+                                               <i class="material-icons">
+                                                send
+                                            </i>
+
+                                           </button>
+                                        </form>
+                                    </div>
 
                                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
 
