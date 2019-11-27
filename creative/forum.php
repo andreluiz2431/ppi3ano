@@ -103,11 +103,49 @@
                             </div>
                             <div class="tab-pane fade" id="v-pills-serie" role="tabpanel" aria-labelledby="v-pills-serie-tab">
 
+                                <div style="margin-left: 45%">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <form method="post" action="forum.php">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                            <i class="material-icons">
+                                                                send
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 SERIE
                             </div>
 
 
                             <div class="tab-pane fade" id="v-pills-paralelo" role="tabpanel" aria-labelledby="v-pills-paralelo-tab">
+
+                                <div style="margin-left: 45%">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <form method="post" action="forum.php">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                            <i class="material-icons">
+                                                                send
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 PARALELO
 
@@ -115,13 +153,49 @@
 
                             <div class="tab-pane fade" id="v-pills-misto" role="tabpanel" aria-labelledby="v-pills-misto-tab">
 
+                                <div style="margin-left: 45%">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <form method="post" action="forum.php">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                            <i class="material-icons">
+                                                                send
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 MISTO
 
 
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-pri-tab">
-
+                                <div style="margin-left: 45%">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <form method="post" action="forum.php">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                            <i class="material-icons">
+                                                                send
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 PRI
 
@@ -129,58 +203,96 @@
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-pur-tab">
-
-
-                               PUR
-
-
+                                <div style="margin-left: 45%">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <form method="post" action="forum.php">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                            <i class="material-icons">
+                                                                send
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-pui-tab">
-                                    PUI
+                                PUR
+
+
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-pui-tab">
+
+
+                                <div style="margin-left: 45%">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <form method="post" action="forum.php">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                            <i class="material-icons">
+                                                                send
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                PUI
                             </div>
                         </div>
                     </div>
-
-
                 </div>
+
+
             </div>
+        </div>
 
 
-            <div class="col-md-1">
+        <div class="col-md-1">
+        </div>
+
+
+
+
+        <?php
+
+        ?>
+
+
+
+
+
+
+        <!-- Footer -->
+        <footer class="bg-light py-5">
+            <div class="container">
+                <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
             </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/creative.min.js"></script>
 
 
-
-
-            <?php
-
-            ?>
-
-
-
-
-
-
-            <!-- Footer -->
-            <footer class="bg-light py-5">
-                <div class="container">
-                    <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
-                </div>
-            </footer>
-
-            <!-- Bootstrap core JavaScript -->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Plugin JavaScript -->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-            <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-            <!-- Custom scripts for this template -->
-            <script src="js/creative.min.js"></script>
-
-
-            </body>
-        </html>
+    </body>
+</html>
