@@ -32,15 +32,17 @@
         $calculadora = new Calculos();
 
         if(!empty($_POST['resistor1'])){ // definir os resistores
-            $funcao1 = $calculadora->resistenciaEquivalenteMista2($_POST['resistor1'], $_POST['resistor2']);
+            $funcao1 = $calculadora->resistenciaEquivalenteMista5($_POST['resistor3'], $_POST['resistor6'], $_POST['resistor7']);
 
-            $funcao2 = $calculadora->resistenciaEquivalenteMista3($_POST['resistor5'], $_POST['resistor6']);
+            $funcao2 = $calculadora->resistenciaEquivalenteMista2($_POST['resistor5'], $funcao1);
 
-            $funcao3 = $calculadora->resistenciaEquivalenteMista2($funcao2, $_POST['resistor4']);
+            $funcao3 = $calculadora->resistenciaEquivalenteMista5($_POST['resistor2'], $_POST['resistor8'], $funcao2);
 
-            $funcao4 = $calculadora->resistenciaEquivalenteMista4($funcao1, $funcao3, $_POST['resistor3'], $_POST['resistor7']);
+            $funcao4 = $calculadora->resistenciaEquivalenteMista2($funcao3, $_POST['resistor4']);
 
-            echo '<br>Resistência equivalente: '.$funcao4;
+            $funcao5 = $calculadora->resistenciaEquivalenteMista3($funcao4, $_POST['resistor1']);
+
+            echo '<br>Resistência equivalente: '.$funcao5;
         }
         ?>
     </body>
