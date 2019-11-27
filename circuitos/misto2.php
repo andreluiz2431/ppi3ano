@@ -4,7 +4,7 @@
     </head>
     <body>
         <label>Xxxxxxxxxxxxxxxxxxxxxxxx, preencha os dados: </label>
-        <form method="post" action="misto.php">
+        <form method="post" action="misto2.php">
             <label>Xxxxxxxxxxxxx</label>
             <br>
             <input type="number" name="resistor1" placeholder="Resistor 1">
