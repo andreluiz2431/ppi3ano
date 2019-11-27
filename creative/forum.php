@@ -28,17 +28,9 @@
         <!-- Theme CSS - Includes Bootstrap -->
         <link href="css/creative.min.css" rel="stylesheet">
 
-        <style>
-            #gradiente{
-                background: rgb(103,68,2);
-                background: linear-gradient(145deg, rgba(103,68,2,1) 0%, rgba(117,77,2,1) 0%, rgba(138,90,1,1) 0%, rgba(152,99,1,1) 20%, rgba(177,115,0,1) 44%, rgba(195,126,0,1) 55%, rgba(215,139,0,1) 68%, rgba(255,196,0,1) 100%);
-                color: white;
-            }
-        </style>
-
     </head>
 
-    <body id="page-top" id="gradiente">
+    <body id="page-top">
 
         <?php
         include '../navbar.php'; // ELA ETSA ALI SÓ ESTA BRANCA MSM
