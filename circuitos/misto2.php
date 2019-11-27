@@ -36,9 +36,9 @@
 
             $funcao2 = $calculadora->resistenciaEquivalenteMista3($_POST['resistorX'], $_POST['resistorX']);
 
-            $funcao3 = $calculadora->resistenciaEquivalenteMista2($_POST['resistorX'], $_POST['resistorX']);
+            $funcao3 = $calculadora->resistenciaEquivalenteMista2($funcao2, $_POST['resistorX']);
 
-            $funcao4 = $calculadora->resistenciaEquivalenteMista4($_POST['resistorX'], $_POST['resistorX'], $_POST['resistorX'], $_POST['resistorX']);
+            $funcao4 = $calculadora->resistenciaEquivalenteMista4($funcao1, $funcao3, $_POST['resistorX'], $_POST['resistorX']);
 
             echo '<br>Resistência equivalente: '.$funcao4;
         }
