@@ -3,10 +3,8 @@
         <title>Circuito misto 2</title>
     </head>
     <body>
-        <label>Xxxxxxxxxxxxxxxxxxxxxxxx, preencha os dados: </label>
+        <label>Preencha os dados dos resistores de acordo com a imagem: </label>
         <form method="post" action="misto2.php">
-            <label>Xxxxxxxxxxxxx</label>
-            <br>
             <input type="number" name="resistor1" placeholder="Resistor 1">
             <br>
             <input type="number" name="resistor2" placeholder="Resistor 2">
