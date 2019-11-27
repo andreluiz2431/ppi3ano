@@ -66,11 +66,11 @@
 
                                     <a class="nav-link" id="v-pills-misto-tab" data-toggle="pill" href="#v-pills-misto" role="tab" aria-controls="v-pills-misto" aria-selected="false">Resistencia Misto</a>
 
-                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-settings" aria-selected="false">PRI</a>
+                                    <a class="nav-link" id="v-pills-pri-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-pri" aria-selected="false">PRI</a>
 
-                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pur" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUR</a>
+                                    <a class="nav-link" id="v-pills-pur-tab" data-toggle="pill" href="#v-pills-pur" role="tab" aria-controls="v-pills-pur" aria-selected="false">PUR</a>
 
-                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pui" role="tab" aria-controls="v-pills-settings" aria-selected="false">PUI</a>
+                                    <a class="nav-link" id="v-pills-pui-tab" data-toggle="pill" href="#v-pills-pui" role="tab" aria-controls="v-pills-pui" aria-selected="false">PUI</a>
                                 </div>
                             </div>
 
@@ -120,23 +120,25 @@
 
                             </div>
 
-                            <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-pri-tab">
 
 
-                                ...
-
-
-                            </div>
-
-                            <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-
-
-                                ...
+                                PRI
 
 
                             </div>
 
-                            <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                            <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-pur-tab">
+
+
+                               PUR
+
+
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-pui-tab">
+                                PUI
+                            </div>
                         </div>
                     </div>
                 </div>
