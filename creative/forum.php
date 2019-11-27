@@ -64,7 +64,7 @@
 
                                     <a class="nav-link" id="v-pills-paralelo-tab" data-toggle="pill" href="#v-pills-paralelo" role="tab" aria-controls="v-pills-paralelo" aria-selected="false">Resistencia Paraleleo</a>
 
-                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Resistencia Misto</a>
+                                    <a class="nav-link" id="v-pills-misto-tab" data-toggle="pill" href="#v-pills-misto" role="tab" aria-controls="v-pills-misto" aria-selected="false">Resistencia Misto</a>
 
                                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-settings" aria-selected="false">PRI</a>
 
@@ -113,9 +113,9 @@
 
                             </div>
 
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <div class="tab-pane fade" id="v-pills-misto" role="tabpanel" aria-labelledby="v-pills-misto-tab">
 
-                                ...
+                       MISTO
 
 
                             </div>
