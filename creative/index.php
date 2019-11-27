@@ -23,6 +23,15 @@
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
 
+    <style>
+
+        #imgCircuitos{
+            width: 450px;
+            height: 250px;
+        }
+
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -97,8 +106,8 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
-            <img class="img-fluid" src="circuitos_img/serie_1.png" alt="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
+            <img class="img-fluid" src="circuitos_img/serie_1.png" alt="Circuito Serie 1">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
                 Circuito Série
@@ -110,7 +119,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/serie_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -123,7 +132,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/serie_3.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -136,7 +145,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/paralelo_1.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -149,7 +158,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/paralelo_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -162,7 +171,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/paralelo_3.png" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
@@ -175,7 +184,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/misto_1.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -188,7 +197,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/misto_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -201,7 +210,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="">
+          <a class="portfolio-box" href="" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/misto_3.png" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
