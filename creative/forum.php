@@ -62,7 +62,7 @@
 
                                     <a class="nav-link" id="v-pills-serie-tab" data-toggle="pill" href="#v-pills-serie" role="tab" aria-controls="v-pills-serie" aria-selected="false">Resistencia Série</a>
 
-                                    <a class="nav-link" id="v-pills-paralelo-tab" data-toggle="pill" href="#v-pills-paralelo" role="tab" aria-controls="v-pills-paralelo" aria-selected="false">Resistencia Paraleleo</a>
+                                    <a class="nav-link" id="v-pills-paralelo-tab" data-toggle="pill" href="#v-pills-paralelo" role="tab" aria-controls="v-pills-paralelo" aria-selected="false">Resistencia Paralelo</a>
 
                                     <a class="nav-link" id="v-pills-misto-tab" data-toggle="pill" href="#v-pills-misto" role="tab" aria-controls="v-pills-misto" aria-selected="false">Resistencia Misto</a>
 
@@ -103,19 +103,19 @@
                             </div>
                             <div class="tab-pane fade" id="v-pills-serie" role="tabpanel" aria-labelledby="v-pills-serie-tab">
 
-                               SERIE
+                                SERIE
                             </div>
 
 
                             <div class="tab-pane fade" id="v-pills-paralelo" role="tabpanel" aria-labelledby="v-pills-paralelo-tab">
 
-                              PARALELO
+                                PARALELO
 
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-misto" role="tabpanel" aria-labelledby="v-pills-misto-tab">
 
-                       MISTO
+                                MISTO
 
 
                             </div>
@@ -134,53 +134,53 @@
                                PUR
 
 
-                            </div>
+                                </div>
 
-                            <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-pui-tab">
-                                PUI
+                                <div class="tab-pane fade" id="v-pills-pui" role="tabpanel" aria-labelledby="v-pills-pui-tab">
+                                    PUI
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
-
-
             </div>
-        </div>
 
 
-        <div class="col-md-1">
-        </div>
-
-
-
-
-        <?php
-
-        ?>
-
-
-
-
-
-
-        <!-- Footer -->
-        <footer class="bg-light py-5">
-            <div class="container">
-                <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+            <div class="col-md-1">
             </div>
-        </footer>
-
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-        <!-- Custom scripts for this template -->
-        <script src="js/creative.min.js"></script>
 
 
-    </body>
-</html>
+
+
+            <?php
+
+            ?>
+
+
+
+
+
+
+            <!-- Footer -->
+            <footer class="bg-light py-5">
+                <div class="container">
+                    <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+                </div>
+            </footer>
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Plugin JavaScript -->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+            <!-- Custom scripts for this template -->
+            <script src="js/creative.min.js"></script>
+
+
+            </body>
+        </html>
