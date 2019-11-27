@@ -19,9 +19,7 @@
         
         session_start();
         $_SESSION['mistoSerie'] = $resSerie;
-        
-        
-        
+
         ?>
     </body>
 </html>
