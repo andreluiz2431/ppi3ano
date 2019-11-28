@@ -142,7 +142,7 @@ $forum = new Forum();
                                                 </button>
                                             </form>
 
-                                             Likes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 1);
+                                             Likes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 1).' Deslikes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 0);
 
                                             echo '<br>
                                             <form action="forum.php" method="POST">
@@ -156,7 +156,30 @@ $forum = new Forum();
 
                                             $j = 0;
                                             while($j < $arrayV1r){
-                                                echo '<br>Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['comentComent'].' - Gostei - Não gostei - Likes: '.$forum->quantLikes($arrayV1r[$j]['idComent'], 'coment', 1);
+                                                echo '<br><div style="margin-left: 40px">Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['comentComent'].' <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV1r[$j]['idComent'].'">
+                                                <input type="hidden" name="tipoLike" value="coment">
+                                                <input type="hidden" name="like" value="1">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_up_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV1r[$j]['idComent'].'">
+                                                <input type="hidden" name="tipoLike" value="coment">
+                                                <input type="hidden" name="like" value="0">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_down_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+                                             Likes: '.$forum->quantLikes($arrayV1r[$j]['idComent'], 'coment', 1).' Deslikes: '.$forum->quantLikes($arrayV1r[$j]['idComent'], 'coment', 0).'</div>';
                                                 $j++;
                                                 if(empty($arrayV1r[$j])){
                                                     break;
@@ -202,7 +225,78 @@ $forum = new Forum();
 
                                         $i = 0;
                                         while($i < $arrayV2){
-                                            echo '<br>Pergunta: '.$arrayV2[$i]['postPost'];
+
+                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV2[$i]['postPost'].'
+
+
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV2[$i]['idPost'].'">
+                                                <input type="hidden" name="tipoLike" value="post">
+                                                <input type="hidden" name="like" value="1">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_up_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV2[$i]['idPost'].'">
+                                                <input type="hidden" name="tipoLike" value="post">
+                                                <input type="hidden" name="like" value="0">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_down_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+                                             Likes: '.$forum->quantLikes($arrayV2[$i]['idPost'], 'post', 1).' Deslikes: '.$forum->quantLikes($arrayV2[$i]['idPost'], 'post', 0);
+
+                                            echo '<br>
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPost" value="'.$arrayV2[$i]['idPost'].'">
+                                                <input type="text" name="comentario" placeholder="Comente aqui">
+                                                <input type="submit">
+                                            </form>
+                                            ';
+
+                                            $arrayV2r = $forum->vizualizarComent($arrayV2[$i]['idPost']);
+
+                                            $j = 0;
+                                            while($j < $arrayV2r){
+                                                echo '<br><div style="margin-left: 40px">Resposta do usuário XXXXXXX: '.$arrayV2r[$j]['comentComent'].' <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV2r[$j]['idComent'].'">
+                                                <input type="hidden" name="tipoLike" value="coment">
+                                                <input type="hidden" name="like" value="1">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_up_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV2r[$j]['idComent'].'">
+                                                <input type="hidden" name="tipoLike" value="coment">
+                                                <input type="hidden" name="like" value="0">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_down_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+                                             Likes: '.$forum->quantLikes($arrayV2r[$j]['idComent'], 'coment', 1).' Deslikes: '.$forum->quantLikes($arrayV2r[$j]['idComent'], 'coment', 0).'</div>';
+                                                $j++;
+                                                if(empty($arrayV2r[$j])){
+                                                    break;
+                                                }
+                                            }
+
+
                                             $i++;
                                             if(empty($arrayV2[$i])){
                                                 break;
