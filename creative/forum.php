@@ -1,5 +1,5 @@
 <?php
-include 'classes/class_forum.php';
+include '../classes/class_forum.php';
 
 $forum = new Forum();
 ?>
@@ -89,7 +89,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="1">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -118,7 +118,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="2">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -144,7 +144,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="3">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -170,7 +170,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="456">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -196,7 +196,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="7">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -222,7 +222,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="9">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -250,7 +250,7 @@ $forum = new Forum();
                                                             <input type="hidden" name="idCalc" value="8">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -287,7 +287,13 @@ $forum = new Forum();
                 $idCalc = $_POST['idCalc'];
 
                 if($idCalc != 456){// tem que escrever la o resto dos mistos
-                    $forum->postagem($post, $_SESSION['id'], $idCalc);
+                    $resultadoPostagem = $forum->postagem($postagem, $_SESSION['id'], $idCalc);
+
+                    if($resultadoPostagem == 'Não postado'){
+                        echo 'Não foi possivel postar, tente novamente';
+                    }else{
+                        echo 'Postado com sucesso!';
+                    }
                 }
 
             }
