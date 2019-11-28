@@ -1,29 +1,106 @@
 <html>
     <head>
         <title>Calculadora P=U.I</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+
+
+        <!-- Font Awesome Icons -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Theme CSS - Includes Bootstrap -->
+        <link href="css/creative.min.css" rel="stylesheet">
+
+        <style>
+            .navbarForum{
+                background-color: #F47E1A;
+                height: 70px;
+            }
+            #imgCircuitos{
+                width: 450px;
+                height: 250px;
+            }
+
+        </style>
+
     </head>
     <body>
-        <label>Insira os valores para calcular: (P=U.I)</label>
+        <div class="navbarForum">
+            <?php
+            include '../navbar.php';
+            ?>
+        </div>
+        <div class="container-fluid">
+            <div class="row" >
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4" >
+                    <div style="margin-top: 20%;">
+                        <div class="shadow p-3 mb-5 bg-white rounded">
 
-        <form action="pui.php" method="post">
-            <input type="number" name="p" placeholder="Potência (P)">
-            <br>
-            <input type="number" name="u" placeholder="Tensão (U)">
-            <br>
-            <input type="number" name="i" placeholder="Corrente (I)">
-            <br>
-            <input type="submit" value="Calcular">
-        </form>
 
-        <?php
 
-        include '../classes/class_calculadoras.php';
+                            <h3 class="text-primary"><center>Insira os valores para calcular: (P=U.I)</center></h3>
+                            <br>
 
-        $calculadora = new Calculos();
 
-        if($_POST){
-            echo 'Resultado do campo vazio: '.$calculadora->pui($_POST['p'], $_POST['u'], $_POST['i']);
-        }
-        ?>
-    </body>
-</html>
+                            <form action="pui.php" method="post">
+                                <div class="input-group">
+                                    <input type="number" name="p" placeholder="Potência (P)" class="form-control">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <input type="number" name="u" placeholder="Tensão (U)" class="form-control">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <input type="number" name="i" placeholder="Corrente (I)" class="form-control">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-block">Calcular</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+
+            include '../classes/class_calculadoras.php';
+
+            $calculadora = new Calculos();
+
+            if($_POST){
+                echo 'Resultado do campo vazio: '.$calculadora->pui($_POST['p'], $_POST['u'], $_POST['i']);
+            }
+            ?>
+
+            <!-- Footer -->
+            <footer class="bg-light py-5">
+                <div class="container">
+                    <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+                </div>
+            </footer>
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="creative/vendor/jquery/jquery.min.js"></script>
+            <script src="creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Plugin JavaScript -->
+            <script src="creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+            <!-- Custom scripts for this template -->
+            <script src="js/creative.min.js"></script>
+            </body>
+        </html>
