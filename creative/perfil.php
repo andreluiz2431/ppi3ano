@@ -141,7 +141,7 @@ document.formUser.submit();
                                         <div class="form-row">
                                             <div class="col-md-8">
                                                 <h5 class="text-primary">ENDEREÇO DE EMAIL:</h5>
-                                                <h6><?php echo $_SESSION['email']; ?></h6><!--  COLOCAR O EMAIL QUE ESTA NO BANCO -->
+                                                <h6><?php echo $_SESSION['email']; ?></h6>
                                             </div>
                                             <div class="col-md-2">
                                             </div>
