@@ -184,7 +184,7 @@
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+          <a class="portfolio-box" href="../circuitos/misto3.php">
             <img class="img-fluid" src="circuitos_img/misto_1.png" alt="" style="height: 250px">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
