@@ -6,6 +6,20 @@ class Forum{
         include '../conexaoBD.php';
     }
 
+    public function deletarPostagem(){
+
+    }
+
+
+    public function deletarComentario(){
+
+    }
+
+
+
+
+
+
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
         // $tipo => se é POST ou COMENT
         // $like => se é CURTIR ou NÃO GOSTEI
