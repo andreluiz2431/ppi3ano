@@ -23,12 +23,9 @@ class Forum{
         // verificar se usuario ja possui like nesse post ou comentario
         $this->conexaoBD();
 
-        $consulta = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = '.$like.') AND (idUsuario = '.$idUsuario.')');
+        $consulta = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = '.$like.') AND (idUsuario = '.$idUsuario.')')->rowCount();
 
-        while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
-            $idCurtida = $linha['idLike'];
-
-            if(!empty($idCurtida)){
+            if($consulta == 0){
                 $ver = false;
                 try {
                     $this->conexaoBD();
@@ -52,7 +49,7 @@ class Forum{
             }else{
                 return 'ja curtida';
             }
-        }
+
     }
 
     public function deslike($idUsuario, $idPostComent, $tipo, $like){ // desfazer o curtir | não curtir
