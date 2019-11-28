@@ -116,7 +116,7 @@ $forum = new Forum();
                                         $i = 0;
                                         while($i < $arrayV1){
 
-                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].'
+                                            echo '<br><br>Pergunta do '.$arrayV1[$i]['nomeUsuario'].': '.$arrayV1[$i]['postPost'].'
 
 
                                             <form action="forum.php" method="POST">

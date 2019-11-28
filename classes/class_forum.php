@@ -129,6 +129,16 @@ class Forum{
             $array[$i]['postPost'] = $linha['postPost'];
             $array[$i]['dataHoraPost'] = $linha['dataHoraPost'];
             $array[$i]['idUsuario'] = $linha['idUsuario'];
+
+            $consultaUsuario = $this->pdo->query("SELECT nomeUsuario FROM usuario WHERE idUsuario = ".$array[$i]['idUsuario']."");
+
+            $k = 0;
+            while($linhaUsuario = $consultaUsuario->fetch(PDO::FETCH_ASSOC)){
+                $array[$k]['nomeUsuario'] = $linhaUsuario['nomeUsuario'];
+
+                $k++;
+            }
+
             $i++;
         }
 
