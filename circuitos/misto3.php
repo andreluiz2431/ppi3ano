@@ -43,6 +43,13 @@
         <div class="container-fluid">
             <div class="row" >
                 <div class="col-md-3">
+                <div style="margin-top: 20%;">
+                        <div class="shadow p-3 mb-5 bg-white rounded">
+                            <center> <h4 class="text-primary"><b>Circuito paralelo:</b></h4></center>
+                            <p>Caracteriza-se por conter componentes conectados tanto em paralelo quanto em série.</p>
+                            <p>Os cálculos são realizados mesclando as ideias do circuito série e paralelo </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6" >
                     <div style="margin-top: 20%;">
