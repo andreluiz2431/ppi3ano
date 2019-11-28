@@ -59,13 +59,13 @@ class Calculos{
     public function uri($r, $u, $i){
         if(empty($i)){
             $i = $u / $r;
-            return $i;
+            return $i.'A';
         }elseif(empty($u)){
             $u = $r * $i;
-            return $u;
+            return $u.'U';
         }elseif(empty($r)){
             $r = $u / $i;
-            return $r;
+            return $r.'<span>&#8486;</span>';
         }else{
             return "Não foi possivel realizar seu calculo";
         }
@@ -75,13 +75,13 @@ class Calculos{
     public function pur($p, $u, $r){
         if (empty($p)){
             $p = ($u**2) / ($r);
-            return $p;
+            return $p.'W';
         }elseif(empty($u)){
             $u = (($r*$p)**(0.5));
-            return $u;
+            return $u.'U';
         }elseif(empty($r)){
             $r = ($u**2) / ($p);
-            return $r;
+            return $r.'<span>&#8486;</span>';
         }else{
             return "Não foi possivel realizar seu calculo";
         }
@@ -89,14 +89,14 @@ class Calculos{
 
     public function pui($p, $u, $i){
         if (empty($p)){
-            $p = ($u)*($i);
+            $p = ($u)*($i).'W';
             return $p;
         }elseif (empty($u)){
-            $u = ($p)/($i);
+            $u = ($p)/($i).'U';
             return $u;
         }elseif (empty($i)){
             $i = ($p)/($u);
-            return $i;
+            return $i.'A';
         }else{
             return "Não foi possivel realizar seu calculo";
         }
@@ -105,13 +105,13 @@ class Calculos{
     public function pri($p, $r, $i){
         if (empty($p)){
             $p=($r)*($i**2);
-            return $p;
+            return $p.'W';
         }elseif (empty($r)){
             $r=($i**2) / ($p);
-            return $r;
+            return $r.'<span>&#8486;</span>';
         }elseif (empty($i)){
             $i= sqrt(($p)/($r));
-            return $i;
+            return $i.'A';
         }else{
             return "Não foi possivel realizar seu calculo";
         }
