@@ -9,7 +9,7 @@
         <meta name="author" content="">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <title>Forúm</title>
+        <title>Perfil</title>
 
         <!-- Font Awesome Icons -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
