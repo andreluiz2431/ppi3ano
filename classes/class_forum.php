@@ -118,7 +118,7 @@ class Forum{
         }
     }
 
-    public function vizualizarPost($idCalc){
+    public function vizualizarPost($idCalc){ // btn-outline-primary | btn-primary
         $this->conexaoBD();
 
         $consulta = $this->pdo->query("SELECT * FROM post WHERE idCalc = ".$idCalc."");
@@ -134,6 +134,22 @@ class Forum{
 
             while($linhaUsuario = $consultaUsuario->fetch(PDO::FETCH_ASSOC)){
                 $array[$i]['nomeUsuario'] = $linhaUsuario['nomeUsuario'];
+            }
+
+            $consultaLike = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$array[$i]['idPost'].') AND (tipoLike = "post") AND (likeLike = 1) AND (idUsuario = '.$array[$i]['idUsuario'].')')->rowCount();
+
+            if($consultaLike != 0){
+                $array[$i]['btn'] = 'btn-primary';
+            }else{
+                $array[$i]['btn'] = 'btn-outline-primary';
+            }
+
+            $consultaDesLike = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$array[$i]['idPost'].') AND (tipoLike = "post") AND (likeLike = 0) AND (idUsuario = '.$array[$i]['idUsuario'].')')->rowCount();
+
+            if($consultaDesLike != 0){
+                $array[$i]['btnD'] = 'btn-primary';
+            }else{
+                $array[$i]['btnD'] = 'btn-outline-primary';
             }
 
             $i++;
@@ -185,6 +201,22 @@ class Forum{
 
             while($linhaUsuario = $consultaUsuario->fetch(PDO::FETCH_ASSOC)){
                 $array[$i]['nomeUsuario'] = $linhaUsuario['nomeUsuario'];
+            }
+
+            $consultaLike = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$array[$i]['idComent'].') AND (tipoLike = "coment") AND (likeLike = 1) AND (idUsuario = '.$array[$i]['idUsuario'].')')->rowCount();
+
+            if($consultaLike != 0){
+                $array[$i]['btn'] = 'btn-primary';
+            }else{
+                $array[$i]['btn'] = 'btn-outline-primary';
+            }
+
+            $consultaDesLike = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$array[$i]['idComent'].') AND (tipoLike = "coment") AND (likeLike = 0) AND (idUsuario = '.$array[$i]['idUsuario'].')')->rowCount();
+
+            if($consultaDesLike != 0){
+                $array[$i]['btnD'] = 'btn-primary';
+            }else{
+                $array[$i]['btnD'] = 'btn-outline-primary';
             }
 
             $i++;
