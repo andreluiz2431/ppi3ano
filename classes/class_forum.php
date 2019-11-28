@@ -19,23 +19,39 @@ class Forum{
     public function like($idUsuario, $idPostComent, $tipo, $like){ // curtir | não curtir
         // $tipo => se é POST ou COMENT
         // $like => se é CURTIR ou NÃO GOSTEI
-        $ver = false;
-        try {
-            $this->conexaoBD();
 
-            $stmt = $this->pdo->prepare('INSERT INTO like (idUsuario, idPostComent, tipoLike, likeLike) VALUES('.$idUsuario.', '.$idPostComent.', "'.$tipo.'", "'.$like.'")');
-            $stmt->execute(array(
-                ':post' => "$post"
-            ));
+        // verificar se usuario ja possui like nesse post ou comentario
+        $this->conexaoBD();
 
-            $ver = true;
-        } catch(PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
-        if($ver == false){
-            return 'Não funcionou';
-        }else{
-            return 'Funcionou';
+        $consulta = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = '.$like.') AND (idUsuario = '.$idUsuario.')');
+
+        while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
+            $idCurtida = $linha['idLike'];
+
+            if(!empty($idCurtida)){
+                $ver = false;
+                try {
+                    $this->conexaoBD();
+
+                    $stmt = $this->pdo->prepare('INSERT INTO curtida (idUsuario, idPostComent, tipoLike, likeLike) VALUES('.$idUsuario.', '.$idPostComent.', "'.$tipo.'", "'.$like.'")');
+                    $stmt->execute(array(
+                        ':idUsuario' => $idUsuario
+                    ));
+
+                    echo "<script>window.location.href= '../creative/forum.php';</script>";
+
+                    $ver = true;
+                } catch(PDOException $e) {
+                    echo 'Error: ' . $e->getMessage();
+                }
+                if($ver == false){
+                    return 'Não funcionou';
+                }else{
+                    return 'Funcionou';
+                }
+            }else{
+                return 'ja curtida';
+            }
         }
     }
 
