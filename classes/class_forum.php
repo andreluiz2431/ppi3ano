@@ -3,7 +3,7 @@ class Forum{
     private $pdo;
 
     private function conexaoBD(){
-        include 'conexaoBD.php';
+        include '../conexaoBD.php';
     }
 
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
@@ -57,7 +57,7 @@ class Forum{
         try {
             $this->conexaoBD();
 
-            $stmt = $this->pdo->prepare('INSERT INTO post (postPost, dataHoraPost, idUsuario, idCalc) VALUES('.$post.', '.$dataHora.', '.$idUsuario.', '.$idCalc.')');
+            $stmt = $this->pdo->prepare('INSERT INTO post (postPost, dataHoraPost, idUsuario, idCalc) VALUES("'.$post.'", "'.$dataHora.'", '.$idUsuario.', '.$idCalc.')');
             $stmt->execute(array(
                 ':post' => "$post"
             ));

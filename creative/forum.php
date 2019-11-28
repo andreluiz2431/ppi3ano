@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../classes/class_forum.php';
 
 $forum = new Forum();
@@ -200,7 +201,7 @@ $forum = new Forum();
                                                         <div class="input-group mb-3">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
@@ -226,7 +227,7 @@ $forum = new Forum();
                                                         <div class="input-group mb-3">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
                                                                     <i class="material-icons">
                                                                         send
                                                                     </i>
