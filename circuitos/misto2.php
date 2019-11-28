@@ -4,6 +4,7 @@
     </head>
     <body>
         <label>Preencha os dados dos resistores de acordo com a imagem: </label>
+        <img src="../creative/circuitos_img/misto_2.png" style="width: 800px">
         <form method="post" action="misto2.php">
             <input type="number" name="resistor1" placeholder="Resistor 1">
             <br>

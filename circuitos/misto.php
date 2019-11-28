@@ -4,6 +4,7 @@
     </head>
     <body>
         <label>Este sistema apresenta duas series em paralelo, preencha os dados em serie: </label>
+        <img src="../creative/circuitos_img/misto_3.png" style="width: 800px">
         <form method="post" action="misto.php">
             <label>Serie 1</label>
             <br>
