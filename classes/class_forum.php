@@ -6,21 +6,13 @@ class Forum{
         include '../conexaoBD.php';
     }
 
-    public function deletarPostagem($id){ // testar
+    public function deletarPostagem($id, $tipo){ // testar
+        // tipo eh post ou coment
         $this->conexaoBD();
 
-        $deletando = $this->pdo->query('DELETE FROM post WHERE idPost = '.$id.'');
+        $deletando = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idPost = '.$id.'');
 
         return 'Postagem deletada';
-    }
-
-
-    public function deletarComentario($id){ // testar
-        $this->conexaoBD();
-
-        $deletando = $this->pdo->query('DELETE FROM coment WHERE idComent = '.$id.'');
-
-        return 'Comentario deletado';
     }
 
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
