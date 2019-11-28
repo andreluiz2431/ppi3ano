@@ -114,7 +114,7 @@ class Usuario{
         }
     }
 
-    public function editarSenha($id, $senhaAtual, $senhaNova1, $senhaNova){ // TESTAR
+    public function editarSenha($id, $senhaAtual, $senhaNova1, $senhaNova){
         if($senhaNova == $senhaNova1){
             //criptografia
             $senhaAtualCriptografada = md5($senhaAtual);
@@ -156,7 +156,7 @@ class Usuario{
         return "Deletado";
     }
 
-    public function editar($id, $nome, $email){ // TESTAR
+    public function editar($id, $nome, $email){
         $this->conexao();
         $sql=$this->pdo->query("SELECT * FROM usuario WHERE idUsuario = ".$id."");
         while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
