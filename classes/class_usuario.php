@@ -115,27 +115,31 @@ class Usuario{
     }
 
     public function editarSenha($id, $senhaAtual, $senhaAtual1, $senhaNova){ // TESTAR
-        //criptografia
-        $senhaAtualCriptografada = md5($senhaAtual);
-        $senhaNovaCriptografada = md5($senhaNova);
+        if($senhaAtual == $senhaAtual1){
+            //criptografia
+            $senhaAtualCriptografada = md5($senhaAtual);
+            $senhaNovaCriptografada = md5($senhaNova);
 
-        $this->conexao();
+            $this->conexao();
 
-        $ver = false;
-        try{
-            $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNovaCriptografada."' WHERE (idUsuario=".$id.") AND (senhaUsuario='".$senhaAtualCriptografada."')");
-            $sql->execute(array(':senhaUsuario' => "'".$senhaNovaCriptografada."'"));
+            $ver = false;
+            try{
+                $sql = $this->pdo->prepare("UPDATE usuario SET senhaUsuario='".$senhaNovaCriptografada."' WHERE (idUsuario=".$id.") AND (senhaUsuario='".$senhaAtualCriptografada."')");
+                $sql->execute(array(':senhaUsuario' => "'".$senhaNovaCriptografada."'"));
 
-            $ver = true;
-        }
-        catch(PDOexception $e){// verificação para caso se der errado
-            echo "ERRO:".$e->getMessege();
-        }
+                $ver = true;
+            }
+            catch(PDOexception $e){// verificação para caso se der errado
+                echo "ERRO:".$e->getMessege();
+            }
 
-        if($ver == false){
-            return 'Não alterado';
+            if($ver == false){
+                return 'Não alterado';
+            }else{
+                return 'Alterado';
+            }
         }else{
-            return 'Alterado';
+            return 'Senhas incopativeis';
         }
     }
 
