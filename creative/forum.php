@@ -115,7 +115,7 @@ $forum = new Forum();
 
                                         $i = 0;
                                         while($i < $arrayV1){
-                                            echo '<br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: XXX';
+                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: XXX';
 
                                             echo '<br>
                                             <form action="forum.php" method="POST">
@@ -129,7 +129,7 @@ $forum = new Forum();
 
                                             $j = 0;
                                             while($j < $arrayV1r){
-                                                echo '<br>Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['postPost'].' Likes: XXX';
+                                                echo '<br>Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['comentComent'].' - Gostei - Não gostei - Likes: XXX';
                                                 $j++;
                                                 if(empty($arrayV1r[$j])){
                                                     break;

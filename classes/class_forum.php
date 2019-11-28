@@ -98,9 +98,9 @@ class Forum{
         try {
             $this->conexaoBD();
 
-            $stmt = $this->pdo->prepare('INSERT INTO comentario (idPost, comentComent, dataHoraComent, idUsuario) VALUES('.$idPost.', "'.$coment.'", "'.$dataHora.'", '.$idUsuario.')');
+            $stmt = $this->pdo->prepare('INSERT INTO coment (idPost, comentComent, dataHoraComent, idUsuario) VALUES('.$idPost.', "'.$coment.'", "'.$dataHora.'", '.$idUsuario.')');
             $stmt->execute(array(
-                ':idpost' => "$idpost"
+                ':idPost' => $idPost
             ));
 
             $ver = true;
@@ -124,7 +124,7 @@ class Forum{
             $array[$i]['idPost'] = $linha['idPost'];
             $array[$i]['idComent'] = $linha['idComent'];
             $array[$i]['comentComent'] = $linha['comentComent'];
-            $array[$i]['dataHoraComent'] = $linha['dataHoraPostComent'];
+            $array[$i]['dataHoraComent'] = $linha['dataHoraComent'];
             $array[$i]['idUsuario'] = $linha['idUsuario'];
             $i++;
         }
