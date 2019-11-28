@@ -1,7 +1,7 @@
 <?php
-//include 'classes/class_forum.php';
+include 'classes/class_forum.php';
 
-//$forum = new Forum();
+$forum = new Forum();
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,6 +86,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="1">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -103,6 +104,9 @@
                                         URI
 
 
+
+
+
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-serie" role="tabpanel" aria-labelledby="v-pills-serie-tab">
 
@@ -111,6 +115,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="2">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -136,6 +141,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="3">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -161,6 +167,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="456">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -186,6 +193,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="7">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -211,6 +219,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="9">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -238,6 +247,7 @@
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
+                                                            <input type="hidden" name="idCalc" value="8">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
@@ -270,10 +280,18 @@
 
 
 
+
             <?php
+            if(!empty($_POST['postagem'])){
+                $postagem = $_POST['postagem'];
+                $idCalc = $_POST['idCalc'];
 
+                if($idCalc != 456){// tem que escrever la o resto dos mistos
+                    $forum->postagem($post, $_SESSION['id'], $idCalc);
+                }
+
+            }
             ?>
-
 
 
 
