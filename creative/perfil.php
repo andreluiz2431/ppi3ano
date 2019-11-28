@@ -274,17 +274,29 @@ document.formEmail.submit();
 if(!empty($_POST['user'])){
     $nome = $_POST['user'];
 
-    $usuario->editar($_SESSION['id'], $nome, $_SESSION['email']);
+    $resultadoEditar = $usuario->editar($_SESSION['id'], $nome, $_SESSION['email']);
+
+    if($resultadoEditar == 'Nenhum dado alterado'){
+        echo 'Tente novamente, verifique se os dados estão corretos';
+    }
 }elseif(!empty($_POST['email'])){
     $email = $_POST['email'];
 
-    $usuario->editar($_SESSION['id'], $_SESSION['usuario'], $email);
+    $resultadoEditar = $usuario->editar($_SESSION['id'], $_SESSION['usuario'], $email);
+
+    if($resultadoEditar == 'Nenhum dado alterado'){
+        echo 'Tente novamente, verifique se os dados estão corretos';
+    }
 }elseif(!empty($_POST['senha_at'])){
     $senha1 = $_POST['senha_at'];
     $senha2 = $_POST['senha_up'];
     $senha3 = $_POST['senha_up_com'];
 
-    $usuario->editarSenha($_SESSION['id'], $senha1, $senha2, $senha3);
+    $resultadoEditarSenha = $usuario->editarSenha($_SESSION['id'], $senha1, $senha2, $senha3);
+
+    if($resultadoEditarSenha == 'Senhas incopativeis'){
+        echo 'Tente novamente, verifique se os dados estão corretos';
+    }
 }
 
 ?>

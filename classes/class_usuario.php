@@ -168,6 +168,7 @@ class Usuario{
                     $sql1 = $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."' WHERE idUsuario=".$id."");
                     $sql1->execute(array(':nomeUsuario' => "$nome"));
 
+                    $_SESSION['usuario'] = $nome;
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
                     echo "ERRO:".$e->getMessege();
@@ -175,8 +176,9 @@ class Usuario{
             }elseif ($email != $emailUsuario){
                 try{
                     $sql1= $this->pdo->prepare("UPDATE usuario SET emailUsuario='".$email."' WHERE idUsuario=".$id."");
-                    $sql1->execute(array(':emailUsuario' => "$nome"));
+                    $sql1->execute(array(':emailUsuario' => "$email"));
 
+                    $_SESSION['email'] = $email;
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
                     echo "ERRO:".$e->getMessege();
@@ -185,6 +187,9 @@ class Usuario{
                 try{
                     $sql1= $this->pdo->prepare("UPDATE usuario SET nomeUsuario='".$nome."', emailUsuario='".$email."'  WHERE idUsuario=".$id."");
                     $sql1->execute(array(':nomeUsuario' => "$nome"));
+
+                    $_SESSION['usuario'] = $nome;
+                    $_SESSION['email'] = $email;
                 }
                 catch(PDOexception $e){// verificação para caso se der errado
                     echo "ERRO:".$e->getMessege();
