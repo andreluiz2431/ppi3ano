@@ -270,8 +270,8 @@ document.formEmail.submit();
                     </div>
                 </div>
 
-                        </body>
+            </body>
         </div>
     </body>
-                    </html>
+</html>
 
