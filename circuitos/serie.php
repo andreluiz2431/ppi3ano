@@ -60,5 +60,11 @@
             echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
         }
         ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
