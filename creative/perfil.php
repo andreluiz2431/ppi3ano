@@ -276,6 +276,8 @@ if(!empty($_POST['user'])){
 
     $resultadoEditar = $usuario->editar($_SESSION['id'], $nome, $_SESSION['email']);
 
+    echo "<script>window.location.href= '../creative/perfil.php';</script>";
+
     if($resultadoEditar == 'Nenhum dado alterado'){
         echo 'Tente novamente, verifique se os dados estão corretos';
     }
@@ -283,6 +285,8 @@ if(!empty($_POST['user'])){
     $email = $_POST['email'];
 
     $resultadoEditar = $usuario->editar($_SESSION['id'], $_SESSION['usuario'], $email);
+
+    echo "<script>window.location.href= '../creative/perfil.php';</script>";
 
     if($resultadoEditar == 'Nenhum dado alterado'){
         echo 'Tente novamente, verifique se os dados estão corretos';
@@ -293,6 +297,8 @@ if(!empty($_POST['user'])){
     $senha3 = $_POST['senha_up_com'];
 
     $resultadoEditarSenha = $usuario->editarSenha($_SESSION['id'], $senha1, $senha2, $senha3);
+
+    echo "<script>window.location.href= '../creative/perfil.php';</script>";
 
     if($resultadoEditarSenha == 'Senhas incopativeis'){
         echo 'Tente novamente, verifique se os dados estão corretos';
