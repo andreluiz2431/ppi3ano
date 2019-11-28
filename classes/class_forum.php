@@ -9,18 +9,18 @@ class Forum{
     public function deletarPostagem($id){ // testar
         $this->conexaoBD();
 
-        $deletando = $this->pdo->query('DELETE FROM post WHERE idPost = '.$idPost.'';
+        $deletando = $this->pdo->query('DELETE FROM post WHERE idPost = '.$id.'');
 
-        return 'deletado';
+        return 'Postagem deletada';
     }
 
 
     public function deletarComentario($id){ // testar
         $this->conexaoBD();
 
-        $deletando = $this->pdo->query('DELETE FROM coment WHERE idComent = '.$idComent.'';
+        $deletando = $this->pdo->query('DELETE FROM coment WHERE idComent = '.$id.'');
 
-        return 'deletado';
+        return 'Comentario deletado';
     }
 
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
