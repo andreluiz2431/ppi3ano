@@ -1,5 +1,6 @@
 <html>
     <head>
+       <title>Calculadora Paralelo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -45,7 +46,7 @@
                 <div class="col-md-4" >
                     <div style="margin-top: 20%;">
                         <div class="shadow p-3 mb-5 bg-white rounded">
-                         <h3 class="text-primary"><center>Adicione resistores para seu circuito série: </center></h3>
+                         <h3 class="text-primary"><center>Adicione resistores para seu circuito paralelo: </center></h3>
 
         <label>Adicione resistores para seu circuito paralelo: </label>
         <?php
