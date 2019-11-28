@@ -111,11 +111,14 @@ $forum = new Forum();
 
 
                                         <?php
+                                        echo $forum->quantLikes(1, 'post', 1);
+
                                         $arrayV1 = $forum->vizualizarPost(1);
 
                                         $i = 0;
                                         while($i < $arrayV1){
-                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: XXX';
+
+                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: ';
 
                                             echo '<br>
                                             <form action="forum.php" method="POST">
