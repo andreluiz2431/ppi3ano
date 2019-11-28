@@ -6,6 +6,23 @@ class Forum{
         include '../conexaoBD.php';
     }
 
+    public function deletarPostagem($id){ // testar
+        $this->conexaoBD();
+
+        $deletando = $this->pdo->query('DELETE FROM post WHERE idPost = '.$id.'');
+
+        return 'Postagem deletada';
+    }
+
+
+    public function deletarComentario($id){ // testar
+        $this->conexaoBD();
+
+        $deletando = $this->pdo->query('DELETE FROM coment WHERE idComent = '.$id.'');
+
+        return 'Comentario deletado';
+    }
+
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
         // $tipo => se é POST ou COMENT
         // $like => se é CURTIR ou NÃO GOSTEI
