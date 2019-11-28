@@ -116,7 +116,33 @@ $forum = new Forum();
                                         $i = 0;
                                         while($i < $arrayV1){
 
-                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 1);
+                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].'
+
+
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV1[$i]['idPost'].'">
+                                                <input type="hidden" name="tipoLike" value="post">
+                                                <input type="hidden" name="like" value="1">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_up_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostLike" value="'.$arrayV1[$i]['idPost'].'">
+                                                <input type="hidden" name="tipoLike" value="post">
+                                                <input type="hidden" name="like" value="0">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        thumb_down_alt
+                                                    </i>
+                                                </button>
+                                            </form>
+
+                                             Likes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 1);
 
                                             echo '<br>
                                             <form action="forum.php" method="POST">
@@ -509,8 +535,15 @@ $forum = new Forum();
                     echo 'Comentado com sucesso!';
                 }
             }
-            ?>
 
+            if(!empty($_POST['idPostLike'])){
+                $idPostLike = $_POST['idPostLike'];
+                $tipoLike = $_POST['tipoLike'];
+                $likeLike = $_POST['like'];
+
+                $forum->like($_SESSION['id'], $idPostLike, $tipoLike, $likeLike);
+            }
+            ?>
 
 
 
