@@ -49,7 +49,7 @@ class Forum{
         return 'Deletado';
     }
 
-    public function postagem($post, $idUsuario, $idCalc){ // TESTAR
+    public function postagem($post, $idUsuario, $idCalc){
         date_default_timezone_set('America/Sao_Paulo');
         $dataHora = date('Y-m-d H:i');
 
