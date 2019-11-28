@@ -70,7 +70,7 @@
                                     $calculadora = new Calculos();
 
                                     if(!empty($c)){
-                                        echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteParalela($c);
+                                        echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteParalela($c).'<span>&#8486;</span>' ;
                                     }
                                     ?>
                                 </div>

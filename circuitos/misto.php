@@ -85,7 +85,7 @@
                                     if(!empty($_POST['resistor1'])){
                                         $array = $calculadora->resistenciaEquivalenteMista1($_POST['resistor1'], $_POST['resistor2'], $_POST['resistor3'], $_POST['resistor4']);
 
-                                        echo '<br><h4><center>Resistência equivalente: '.$calculadora->resistenciaEquivalenteMista2($array[0], $array[1]).'</center></h4>';
+                                        echo '<br><h4><center>Resistência equivalente: '.$calculadora->resistenciaEquivalenteMista2($array[0], $array[1]).'<span>&#8486;</span> </center></h4>';
                                     }
                                     ?>
                                 </div>
