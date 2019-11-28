@@ -104,7 +104,7 @@ class Calculos{
 
     public function pri($p, $r, $i){
         if (empty($p)){
-            $p=($u)*($i**2);
+            $p=($r)*($i**2);
             return $p;
         }elseif (empty($r)){
             $r=($i**2) / ($p);
