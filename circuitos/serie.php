@@ -1,6 +1,6 @@
 <html>
-   <head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -45,21 +45,21 @@
                 <div class="col-md-4" >
                     <div style="margin-top: 20%;">
                         <div class="shadow p-3 mb-5 bg-white rounded">
-                         <h3 class="text-primary"><center>Adicione resistores para seu circuito série: </center></h3>
+                            <h3 class="text-primary"><center>Adicione resistores para seu circuito série: </center></h3>
 
-        <?php
-        $pagina = 'serie';
+                            <?php
+                            $pagina = 'serie';
 
-        include '../adicionar_resistores.php';
+                            include '../adicionar_resistores.php';
 
-        include '../classes/class_calculadoras.php';
+                            include '../classes/class_calculadoras.php';
 
-        $calculadora = new Calculos();
+                            $calculadora = new Calculos();
 
-        if(!empty($c)){
-            echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
-        }
-        ?>
+                            if(!empty($c)){
+                                echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
