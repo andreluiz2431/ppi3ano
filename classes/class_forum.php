@@ -62,6 +62,8 @@ class Forum{
                 ':post' => "$post"
             ));
 
+            echo "<script>window.location.href= '../creative/forum.php';</script>";
+
             $ver = true;
         } catch(PDOException $e) {
             echo 'Error: ' . $e->getMessage();
@@ -102,6 +104,8 @@ class Forum{
             $stmt->execute(array(
                 ':idPost' => $idPost
             ));
+
+            echo "<script>window.location.href= '../creative/forum.php';</script>";
 
             $ver = true;
         } catch(PDOException $e) {
