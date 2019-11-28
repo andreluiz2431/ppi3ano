@@ -115,7 +115,28 @@ $forum = new Forum();
 
                                         $i = 0;
                                         while($i < $arrayV1){
-                                            echo '<br>Pergunta: '.$arrayV1[$i]['postPost'];
+                                            echo '<br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: XXX';
+
+                                            echo '<br>
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPost" value="'.$arrayV1[$i]['idPost'].'">
+                                                <input type="text" name="comentario" placeholder="Comente aqui">
+                                                <input type="submit">
+                                            </form>
+                                            ';
+
+                                            $arrayV1r = $forum->vizualizarComent($arrayV1[$i]['idPost']);
+
+                                            $j = 0;
+                                            while($j < $arrayV1r){
+                                                echo '<br>Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['postPost'].' Likes: XXX';
+                                                $j++;
+                                                if(empty($arrayV1r[$j])){
+                                                    break;
+                                                }
+                                            }
+
+
                                             $i++;
                                             if(empty($arrayV1[$i])){
                                                 break;
@@ -465,16 +486,27 @@ $forum = new Forum();
                 $postagem = $_POST['postagem'];
                 $idCalc = $_POST['idCalc'];
 
-                if($idCalc != 456){// tem que escrever la o resto dos mistos
-                    $resultadoPostagem = $forum->postagem($postagem, $_SESSION['id'], $idCalc);
+                $resultadoPostagem = $forum->postagem($postagem, $_SESSION['id'], $idCalc);
 
-                    if($resultadoPostagem == 'Não postado'){
-                        echo 'Não foi possivel postar, tente novamente';
-                    }else{
-                        echo 'Postado com sucesso!';
-                    }
+                if($resultadoPostagem == 'Não postado'){
+                    echo 'Não foi possivel postar, tente novamente';
+                }else{
+                    echo 'Postado com sucesso!';
                 }
+            }
 
+
+            if(!empty($_POST['comentario'])){
+                $comentario = $_POST['comentario'];
+                $idPost = $_POST['idPost'];
+
+                $resultadocomentario = $forum->comentarPost($idPost, $comentario, $_SESSION['id']);
+
+                if($resultadocomentario == 'Não comentado'){
+                    echo 'Não foi possivel comentar, tente novamente';
+                }else{
+                    echo 'Comentado com sucesso!';
+                }
             }
             ?>
 

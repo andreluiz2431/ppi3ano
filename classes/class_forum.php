@@ -73,7 +73,7 @@ class Forum{
         }
     }
 
-    public function vizualizarPost($idCalc){ // funciona
+    public function vizualizarPost($idCalc){
         $this->conexaoBD();
 
         $consulta = $this->pdo->query("SELECT * FROM post WHERE idCalc = ".$idCalc."");
@@ -128,7 +128,12 @@ class Forum{
             $array[$i]['idUsuario'] = $linha['idUsuario'];
             $i++;
         }
-        return $array;
+        if(isset($array)){
+            return $array;
+        }else{
+            return 'nada';
+        }
+
     }
 }
 ?>
