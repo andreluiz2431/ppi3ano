@@ -32,8 +32,6 @@ class Forum{
 
             return 'Comentario deletada';
         }
-
-
     }
 
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
