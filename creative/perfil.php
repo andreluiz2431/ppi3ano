@@ -56,16 +56,13 @@ $usuario->verificarLogado();
                         <div class="col-md-4">
                         </div>
                         <div class="col-md-4" >
-                            <div style="margin-top: 30%;">
+                            <div style="margin-top: 50%;">
                                 <div class="shadow p-3 mb-5 bg-white rounded">
                                     <div style="margin-top: -16%">
                                         <center>
                                             <img src='cara.jpeg' alt='Deu pau' class='rounded-circle' width='120px' ></center>
                                     </div>
 
-                                    <div class="spinner-border" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
                                     <div>
                                         <hr>
                                     </div>
