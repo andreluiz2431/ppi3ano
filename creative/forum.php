@@ -111,14 +111,12 @@ $forum = new Forum();
 
 
                                         <?php
-                                        echo $forum->quantLikes(1, 'post', 1);
-
                                         $arrayV1 = $forum->vizualizarPost(1);
 
                                         $i = 0;
                                         while($i < $arrayV1){
 
-                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: ';
+                                            echo '<br><br>Pergunta do usuário XXXXXX: '.$arrayV1[$i]['postPost'].' - Gostei - Não gostei - Likes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 1);
 
                                             echo '<br>
                                             <form action="forum.php" method="POST">
@@ -132,7 +130,7 @@ $forum = new Forum();
 
                                             $j = 0;
                                             while($j < $arrayV1r){
-                                                echo '<br>Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['comentComent'].' - Gostei - Não gostei - Likes: XXX';
+                                                echo '<br>Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['comentComent'].' - Gostei - Não gostei - Likes: '.$forum->quantLikes($arrayV1r[$j]['idComent'], 'coment', 1);
                                                 $j++;
                                                 if(empty($arrayV1r[$j])){
                                                     break;

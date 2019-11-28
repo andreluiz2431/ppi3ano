@@ -11,7 +11,7 @@ class Forum{
         // $like => se é CURTIR ou NÃO GOSTEI
         $this->conexaoBD();
 
-        $consulta = $this->pdo->query('SELECT * FROM like WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = '.$like.')')->rowCount();
+        $consulta = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = '.$like.')')->rowCount();
 
         return $consulta;
     }
