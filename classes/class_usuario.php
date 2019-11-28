@@ -107,7 +107,7 @@ class Usuario{
         return $sql;
     }
 
-    public function verificarLogado(){ // TESTAR             Instanciar em todas as telas menos no Login e Cadastro
+    public function verificarLogado(){ //            Instanciar em todas as telas menos no Login e Cadastro
         session_start();
         if(!isset($_SESSION['usuario'])){
             echo "<script>window.location.href= '../sb-admin-2/index.php';</script>";

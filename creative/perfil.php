@@ -274,4 +274,15 @@ document.formEmail.submit();
         </div>
     </body>
 </html>
+<?php
+if(!empty($_POST['user']))){
+    $nome = $_POST['user'];
 
+    $usuario->editar($_SESSION['id'], $nome, $_SESSION['email']);
+}elseif(!empty($_POST['email']))){
+    $email = $_POST['email'];
+
+    $usuario->editar($_SESSION['id'], $_SESSION['usuario'], $email);
+}
+
+?>
