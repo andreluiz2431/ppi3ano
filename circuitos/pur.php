@@ -47,6 +47,7 @@
                         <div class="shadow p-3 mb-5 bg-white rounded">
 
                             <h3 class="text-primary"><center>Insira os valores para calcular: (P=U²/R)</center></h3>
+                            <br>
 
                             <form action="pur.php" method="post">
 
