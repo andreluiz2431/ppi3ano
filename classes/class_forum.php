@@ -8,11 +8,24 @@ class Forum{
 
     public function deletarPostagem($id, $tipo){ // testar
         // tipo eh post ou coment
-        $this->conexaoBD();
 
-        $deletando = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idPost = '.$id.'');
+        if($tipo == 'post'){ // deletar os comentarios primeiro
+            $this->conexaoBD();
 
-        return 'Postagem deletada';
+            $deletandoC = $this->pdo->query('DELETE FROM coment WHERE idPost = '.$id.'');
+
+            $deletandoP = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idPost = '.$id.'');
+
+            return 'Postagem e seus comentarios deletados';
+        }else{
+            $this->conexaoBD();
+
+            $deletando = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idPost = '.$id.'');
+
+            return 'Comentario deletada';
+        }
+
+
     }
 
     public function quantLikes($idPostComent, $tipo, $like){ // TESTAR
@@ -34,30 +47,30 @@ class Forum{
 
         $consulta = $this->pdo->query('SELECT * FROM curtida WHERE (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = '.$like.') AND (idUsuario = '.$idUsuario.')')->rowCount();
 
-            if($consulta == 0){
-                $ver = false;
-                try {
-                    $this->conexaoBD();
+        if($consulta == 0){
+            $ver = false;
+            try {
+                $this->conexaoBD();
 
-                    $stmt = $this->pdo->prepare('INSERT INTO curtida (idUsuario, idPostComent, tipoLike, likeLike) VALUES('.$idUsuario.', '.$idPostComent.', "'.$tipo.'", "'.$like.'")');
-                    $stmt->execute(array(
-                        ':idUsuario' => $idUsuario
-                    ));
+                $stmt = $this->pdo->prepare('INSERT INTO curtida (idUsuario, idPostComent, tipoLike, likeLike) VALUES('.$idUsuario.', '.$idPostComent.', "'.$tipo.'", "'.$like.'")');
+                $stmt->execute(array(
+                    ':idUsuario' => $idUsuario
+                ));
 
-                    echo "<script>window.location.href= '../creative/forum.php';</script>";
+                echo "<script>window.location.href= '../creative/forum.php';</script>";
 
-                    $ver = true;
-                } catch(PDOException $e) {
-                    echo 'Error: ' . $e->getMessage();
-                }
-                if($ver == false){
-                    return 'Não funcionou';
-                }else{
-                    return 'Funcionou';
-                }
-            }else{
-                return 'ja curtida';
+                $ver = true;
+            } catch(PDOException $e) {
+                echo 'Error: ' . $e->getMessage();
             }
+            if($ver == false){
+                return 'Não funcionou';
+            }else{
+                return 'Funcionou';
+            }
+        }else{
+            return 'ja curtida';
+        }
 
     }
 
