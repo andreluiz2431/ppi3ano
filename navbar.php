@@ -25,7 +25,7 @@
                     if(empty($_SESSION['usuario'])){
                         echo '<a class="nav-link js-scroll-trigger" href="../sb-admin-2/index.php">Login</a>';
                     }else{
-                        echo '<a class="nav-link js-scroll-trigger" href="../perfil.php">Perfil</a>';
+                        echo '<a class="nav-link js-scroll-trigger" href="../creative/perfil.php">Perfil</a>';
 
                     }
                     ?>
