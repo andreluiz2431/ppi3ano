@@ -159,7 +159,7 @@ class Usuario{
     public function editar($id, $nome, $email){ // TESTAR
         $this->conexao();
         $sql=$this->pdo->query("SELECT * FROM usuario WHERE idUsuario = ".$id."");
-        while($linha=$sql->fach(PDO::FECH_ASSOC)){
+        while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
             $nomeUsuario= $linha['nomeUsuario'];
             $emailUsuario= $linha['emailUsuario'];
 

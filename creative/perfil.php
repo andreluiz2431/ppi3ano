@@ -82,7 +82,7 @@ $usuario->verificarLogado();
                                         </div>
                                         <div class="collapse" id="collapseUser">
                                             <div class="card card-body">
-                                                <form name="formUser" id="formUser" action="alterarUser.php" method="POST">
+                                                <form name="formUser" id="formUser" action="perfil.php" method="POST">
                                                     <div class="form-group">
                                                         <label>Insira um novo nome de usuario:</label>
                                                         <input type="text" name="user" id="user" class="form-control" maxlength="30" required="true">
@@ -92,7 +92,7 @@ $usuario->verificarLogado();
                                                         ?>
                                                         <!--    AQUI TEM ESSA FUÇÃO PRA COISAR O AJAX  -->
                                                         <p class="text-muted">* Maximo 30 caracteres.</p>
-                                                        <button type="button" id="salvarUser"  class="btn btn-primary"  onclick="verificaUser()">Salvar</button>
+                                                        <button type="submit" id="salvarUser"  class="btn btn-primary"  onclick="verificaUser()">Salvar</button>
                                                     </div>
                                                 </form>
                                                 <!--  <script>
@@ -151,7 +151,7 @@ document.formUser.submit();
                                         </div>
                                         <div class="collapse" id="collapseEmail">
                                             <div class="card card-body">
-                                                <form name="formEmail" id="formEmail" action="alterarEmail.php" method="POST">
+                                                <form name="formEmail" id="formEmail" action="perfil.php" method="POST">
                                                     <div class="form-group">
                                                         <label>Insira um novo endereço de email:</label>
                                                         <input type="email" name="email" id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="true">
@@ -164,7 +164,7 @@ document.formUser.submit();
 
 
                                                         <p class="text-muted">* Maximo 100 caracteres.</p>
-                                                        <button type="button" id="salvarEmail"  class="btn btn-primary" onclick="verificaEmail()" >Salvar</button> <!-- ESSAS FUNÇÃO QUE EU NEM SEI MAIS OQ FAZ COM O AAJAX -->
+                                                        <button type="submit" id="salvarEmail"  class="btn btn-primary" onclick="verificaEmail()" >Salvar</button> <!-- ESSAS FUNÇÃO QUE EU NEM SEI MAIS OQ FAZ COM O AAJAX -->
 
                                                     </div>
                                                 </form>
@@ -217,7 +217,7 @@ document.formEmail.submit();
                                         <!--           ARRUAMAR AQUI A PAGINA PHP QUE A SENHA VAI IR  -->
                                         <div class="collapse" id="collapseSenha">
                                             <div class="card card-body">
-                                                <form name="formSenha" id="formSenha" action="alterarSenha.php" method="POST">
+                                                <form name="formSenha" id="formSenha" action="perfil.php" method="POST">
                                                     <div class="form-group">
                                                         <label>Insira sua senha atual:</label>
                                                         <input type="password" name="senha_at" id="senha_at" class="form-control" maxlength="32">
