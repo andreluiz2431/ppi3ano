@@ -71,7 +71,7 @@ $forum = new Forum();
 
                                         <a class="nav-link" id="v-pills-misto_2-tab" data-toggle="pill" href="#v-pills-misto_2" role="tab" aria-controls="v-pills-misto_2" aria-selected="false">Resistencia Misto 2</a>
 
-                                         <a class="nav-link" id="v-pills-misto_3-tab" data-toggle="pill" href="#v-pills-misto_3" role="tab" aria-controls="v-pills-misto_3" aria-selected="false">Resistencia Misto 3</a>
+                                        <a class="nav-link" id="v-pills-misto_3-tab" data-toggle="pill" href="#v-pills-misto_3" role="tab" aria-controls="v-pills-misto_3" aria-selected="false">Resistencia Misto 3</a>
 
                                         <a class="nav-link" id="v-pills-pri-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-pri" aria-selected="false">PRI</a>
 
@@ -110,7 +110,18 @@ $forum = new Forum();
                                         URI
 
 
+                                        <?php
+                                        $arrayV1 = $forum->vizualizarPost(1);
 
+                                        $i = 0;
+                                        while($i < $arrayV1){
+                                            echo '<br>Pergunta: '.$arrayV1[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV1[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
 
 
                                     </div>
@@ -137,6 +148,19 @@ $forum = new Forum();
                                         </div>
 
                                         SERIE
+
+                                        <?php
+                                        $arrayV2 = $forum->vizualizarPost(2);
+
+                                        $i = 0;
+                                        while($i < $arrayV2){
+                                            echo '<br>Pergunta: '.$arrayV2[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV2[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
                                     </div>
 
 
@@ -164,6 +188,19 @@ $forum = new Forum();
 
                                         PARALELO
 
+                                        <?php
+                                        $arrayV3 = $forum->vizualizarPost(3);
+
+                                        $i = 0;
+                                        while($i < $arrayV3){
+                                            echo '<br>Pergunta: '.$arrayV3[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV3[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
+
                                     </div>
 
                                     <div class="tab-pane fade" id="v-pills-misto" role="tabpanel" aria-labelledby="v-pills-misto-tab">
@@ -190,17 +227,29 @@ $forum = new Forum();
 
                                         MISTO 1
 
+                                        <?php
+                                        $arrayV4 = $forum->vizualizarPost(4);
+
+                                        $i = 0;
+                                        while($i < $arrayV4){
+                                            echo '<br>Pergunta: '.$arrayV4[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV4[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
 
                                     </div>
 
-                                     <div class="tab-pane fade" id="v-pills-misto_2" role="tabpanel" aria-labelledby="v-pills-misto_2-tab">
+                                    <div class="tab-pane fade" id="v-pills-misto_2" role="tabpanel" aria-labelledby="v-pills-misto_2-tab">
 
                                         <div style="margin-left: 45%">
                                             <div class="tab-content" id="v-pills-tabContent">
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
-                                                           <input type="hidden" name="idCalc" value="5">
+                                                            <input type="hidden" name="idCalc" value="5">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
@@ -218,16 +267,29 @@ $forum = new Forum();
                                         MISTO 2
 
 
+                                        <?php
+                                        $arrayV5 = $forum->vizualizarPost(5);
+
+                                        $i = 0;
+                                        while($i < $arrayV5){
+                                            echo '<br>Pergunta: '.$arrayV5[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV5[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
+
                                     </div>
 
-                                     <div class="tab-pane fade" id="v-pills-misto_3" role="tabpanel" aria-labelledby="v-pills-misto3-tab">
+                                    <div class="tab-pane fade" id="v-pills-misto_3" role="tabpanel" aria-labelledby="v-pills-misto3-tab">
 
                                         <div style="margin-left: 45%">
                                             <div class="tab-content" id="v-pills-tabContent">
                                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                     <form method="post" action="forum.php">
                                                         <div class="input-group mb-3">
-                                                           <input type="hidden" name="idCalc" value="6">
+                                                            <input type="hidden" name="idCalc" value="6">
                                                             <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                                             <div class="input-group-append">
                                                                 <button class="btn btn-outline-primary" type="submit" id="button-addon2" style="width: 45px; height: 38px">
@@ -243,6 +305,20 @@ $forum = new Forum();
                                         </div>
 
                                         MISTO 3
+
+
+                                        <?php
+                                        $arrayV6 = $forum->vizualizarPost(6);
+
+                                        $i = 0;
+                                        while($i < $arrayV6){
+                                            echo '<br>Pergunta: '.$arrayV6[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV6[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
 
 
                                     </div>
@@ -273,6 +349,19 @@ $forum = new Forum();
                                         PRI
 
 
+                                        <?php
+                                        $arrayV7 = $forum->vizualizarPost(7);
+
+                                        $i = 0;
+                                        while($i < $arrayV7){
+                                            echo '<br>Pergunta: '.$arrayV7[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV7[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
+
                                     </div>
 
                                     <div class="tab-pane fade" id="v-pills-pur" role="tabpanel" aria-labelledby="v-pills-pur-tab">
@@ -298,6 +387,19 @@ $forum = new Forum();
 
                                         PUR
 
+
+                                        <?php
+                                        $arrayV8 = $forum->vizualizarPost(8);
+
+                                        $i = 0;
+                                        while($i < $arrayV8){
+                                            echo '<br>Pergunta: '.$arrayV8[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV8[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
 
                                     </div>
 
@@ -325,6 +427,21 @@ $forum = new Forum();
                                         </div>
 
                                         PUI
+
+
+                                        <?php
+                                        $arrayV9 = $forum->vizualizarPost(9);
+
+                                        $i = 0;
+                                        while($i < $arrayV9){
+                                            echo '<br>Pergunta: '.$arrayV9[$i]['postPost'];
+                                            $i++;
+                                            if(empty($arrayV9[$i])){
+                                                break;
+                                            }
+                                        }
+                                        ?>
+
                                     </div>
                                 </div>
                             </div>
