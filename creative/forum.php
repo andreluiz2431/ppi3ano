@@ -65,7 +65,11 @@
 
                                         <a class="nav-link" id="v-pills-paralelo-tab" data-toggle="pill" href="#v-pills-paralelo" role="tab" aria-controls="v-pills-paralelo" aria-selected="false">Resistencia Paralelo</a>
 
-                                        <a class="nav-link" id="v-pills-misto-tab" data-toggle="pill" href="#v-pills-misto" role="tab" aria-controls="v-pills-misto" aria-selected="false">Resistencia Misto</a>
+                                        <a class="nav-link" id="v-pills-misto-tab" data-toggle="pill" href="#v-pills-misto" role="tab" aria-controls="v-pills-misto" aria-selected="false">Resistencia Misto 1</a>
+
+                                        <a class="nav-link" id="v-pills-misto_2-tab" data-toggle="pill" href="#v-pills-misto_2" role="tab" aria-controls="v-pills-misto_2" aria-selected="false">Resistencia Misto 2</a>
+
+                                         <a class="nav-link" id="v-pills-misto_3-tab" data-toggle="pill" href="#v-pills-misto_3" role="tab" aria-controls="v-pills-misto_3" aria-selected="false">Resistencia Misto 3</a>
 
                                         <a class="nav-link" id="v-pills-pri-tab" data-toggle="pill" href="#v-pills-pri" role="tab" aria-controls="v-pills-pri" aria-selected="false">PRI</a>
 
@@ -179,6 +183,60 @@
 
 
                                     </div>
+
+                                     <div class="tab-pane fade" id="v-pills-misto_2" role="tabpanel" aria-labelledby="v-pills-misto_2-tab">
+
+                                        <div style="margin-left: 45%">
+                                            <div class="tab-content" id="v-pills-tabContent">
+                                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                    <form method="post" action="forum.php">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                    <i class="material-icons">
+                                                                        send
+                                                                    </i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        MISTO 2
+
+
+                                    </div>
+
+                                     <div class="tab-pane fade" id="v-pills-misto_3" role="tabpanel" aria-labelledby="v-pills-misto3-tab">
+
+                                        <div style="margin-left: 45%">
+                                            <div class="tab-content" id="v-pills-tabContent">
+                                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                    <form method="post" action="forum.php">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" name="postagem" placeholder="Faça sua pergunta..." class="form-control" title="Postagem" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-primary" type="button" id="button-addon2" style="width: 45px; height: 38px">
+                                                                    <i class="material-icons">
+                                                                        send
+                                                                    </i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        MISTO 3
+
+
+                                    </div>
+
+
 
                                     <div class="tab-pane fade" id="v-pills-pri" role="tabpanel" aria-labelledby="v-pills-pri-tab">
                                         <div style="margin-left: 45%">
