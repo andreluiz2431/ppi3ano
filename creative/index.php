@@ -34,6 +34,23 @@ session_start();
             height: 250px;
         }
 
+        #sla{
+            display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width: 100%;
+height: 100%;
+position: absolute;
+bottom: 0;
+text-align: center;
+opacity: 0;
+color: #fff;
+background: rgba(244,98,58,.9);
+transition: opacity .25s ease;
+text-align: center;
+        }
+
     </style>
 
 </head>
@@ -80,25 +97,41 @@ session_start();
       <h2 class="text-center mt-0">Calculadoras</h2>
       <hr class="divider my-4">
       <div class="row">
-        <div class="col-lg-4 col-md-6 text-center">
+        <div class="col-lg-2 col-md-6 text-center">
           <div class="mt-5">
-            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+              <a href="../circuitos/uri.php"><i class="fas fa-4x fa-gem text-primary mb-4"></i>
             <h3 class="h4 mb-2">U = R . I</h3>
-            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+            <p class="text-muted mb-0">Calculadora da Formula URI</p></a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 text-center">
+        <div class="col-lg-2 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Req</h3>
-            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+              <a href="index.php#portfolio"><h3 class="h4 mb-2">Req</h3>
+            <p class="text-muted mb-0">Calculadora de resistencias equivalentes.</p></a>
+          </div>
+
+
+        </div>
+        <div class="col-lg-2 col-md-6 text-center">
+          <div class="mt-5">
+            <a href="../circuitos/pui.php"><i class="fas fa-4x fa-globe text-primary mb-4"></i>
+            <h3 class="h4 mb-2">P = U . I</h3>
+                <p class="text-muted mb-0">Calculadora da Formula PUI</p></a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 text-center">
+        <div class="col-lg-2 col-md-6 text-center">
           <div class="mt-5">
-            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">P = U . I</h3>
-            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+            <a href="../circuitos/pur.php"><i class="fas fa-4x fa-globe text-primary mb-4"></i>
+            <h3 class="h4 mb-2">P = U² . R</h3>
+              <p class="text-muted mb-0">Calculadora da Formula PUR</p></a>
+          </div>
+        </div>
+         <div class="col-lg-2 col-md-6 text-center">
+          <div class="mt-5">
+            <a href="../circuitos/pri.php"><i class="fas fa-4x fa-globe text-primary mb-4"></i>
+            <h3 class="h4 mb-2">P = R . I</h3>
+              <p class="text-muted mb-0">Calculadora da Formula PRI</p></a>
           </div>
         </div>
       </div>
@@ -106,11 +139,11 @@ session_start();
   </section>
 
   <!-- CIRCUITOS -->
-  <section id="portfolio">
-    <div class="container-fluid p-0">
+  <section id="circuitos">
+     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+         <a class="portfolio-box" href="../circuitos/serie.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/serie_1.png" alt="Circuito Serie 1">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -120,10 +153,10 @@ session_start();
                 4 Resistores - 1 Bateria
               </div>
             </div>
-          </a>
+             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+         <a class="portfolio-box" href="../circuitos/serie.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/serie_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -136,7 +169,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+          <a class="portfolio-box" href="../circuitos/serie.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/serie_3.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -149,7 +182,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+          <a class="portfolio-box" href="../circuitos/paralelo.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/paralelo_1.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -162,7 +195,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+          <a class="portfolio-box" href="../circuitos/paralelo.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/paralelo_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -175,7 +208,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+         <a class="portfolio-box" href="../circuitos/paralelo.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/paralelo_3.png" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
@@ -188,7 +221,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="../circuitos/misto3.php">
+         <a class="portfolio-box" href="../circuitos/misto3.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/misto_1.png" alt="" style="height: 250px">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -201,7 +234,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+           <a class="portfolio-box" href="../circuitos/misto2.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/misto_2.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
@@ -214,7 +247,7 @@ session_start();
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="" id="imgCircuitos">
+           <a class="portfolio-box" href="../circuitos/misto.php" id="imgCircuitos">
             <img class="img-fluid" src="circuitos_img/misto_3.png" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">

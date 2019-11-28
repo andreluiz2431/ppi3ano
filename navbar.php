@@ -11,7 +11,7 @@
                     <a class="nav-link js-scroll-trigger" href="../creative/index.php#about">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="../creative/index.php#portfolio">Circuitos</a>
+                    <a class="nav-link js-scroll-trigger" href="../creative/index.php#circuitos">Circuitos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="../creative/index.php#services">Calculadoras</a>
