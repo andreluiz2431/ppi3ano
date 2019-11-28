@@ -142,6 +142,15 @@ $forum = new Forum();
                                                 </button>
                                             </form>
 
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="idPostDeletar" value="'.$arrayV1[$i]['idPost'].'">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        delete
+                                                    </i>
+                                                </button>
+                                            </form>
+
                                              Likes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 1).' Deslikes: '.$forum->quantLikes($arrayV1[$i]['idPost'], 'post', 0);
 
                                             echo '<br>
@@ -636,6 +645,12 @@ $forum = new Forum();
                 $likeLike = $_POST['like'];
 
                 $forum->like($_SESSION['id'], $idPostLike, $tipoLike, $likeLike);
+            }
+
+            if(!empty($_POST['idPostDeletar'])){
+                $idPostDeletar = $_POST['idPostDeletar'];
+
+                $forum->
             }
             ?>
 
