@@ -91,7 +91,7 @@
 
                                 $funcao5 = $calculadora->resistenciaEquivalenteMista3($funcao4, $_POST['resistor1']);
 
-                                echo '<br>Resistência equivalente: '.$funcao5;
+                                echo '<br><h4><center>Resistência equivalente: '.$funcao5.'</center></h4>';
                             }
                             ?>
                         </div>
