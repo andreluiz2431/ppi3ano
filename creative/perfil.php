@@ -271,14 +271,20 @@ document.formEmail.submit();
     </body>
 </html>
 <?php
-if(!empty($_POST['user']))){
+if(!empty($_POST['user'])){
     $nome = $_POST['user'];
 
     $usuario->editar($_SESSION['id'], $nome, $_SESSION['email']);
-}elseif(!empty($_POST['email']))){
+}elseif(!empty($_POST['email'])){
     $email = $_POST['email'];
 
     $usuario->editar($_SESSION['id'], $_SESSION['usuario'], $email);
+}elseif(!empty($_POST['senha_at'])){
+    $senha1 = $_POST['senha_at'];
+    $senha2 = $_POST['senha_up'];
+    $senha3 = $_POST['senha_up_com'];
+
+
 }
 
 ?>

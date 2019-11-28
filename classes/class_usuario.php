@@ -114,7 +114,7 @@ class Usuario{
         }
     }
 
-    public function editarSenha($id, $senhaAtual, $senhaNova){ // TESTAR
+    public function editarSenha($id, $senhaAtual, $senhaAtual1, $senhaNova){ // TESTAR
         //criptografia
         $senhaAtualCriptografada = md5($senhaAtual);
         $senhaNovaCriptografada = md5($senhaNova);
