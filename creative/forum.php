@@ -116,7 +116,7 @@ $forum = new Forum();
                                         $i = 0;
                                         while($i < $arrayV1){
 
-                                            echo '<br><br>Pergunta do '.$arrayV1[$i]['nomeUsuario'].': '.$arrayV1[$i]['postPost'].'
+                                            echo '<br><br>Pergunta do(a) '.$arrayV1[$i]['nomeUsuario'].': '.$arrayV1[$i]['postPost'].'
 
 
                                             <form action="forum.php" method="POST">
@@ -166,7 +166,7 @@ $forum = new Forum();
 
                                             $j = 0;
                                             while($j < $arrayV1r){
-                                                echo '<br><div style="margin-left: 40px">Resposta do usuário XXXXXXX: '.$arrayV1r[$j]['comentComent'].' <form action="forum.php" method="POST">
+                                                echo '<br><div style="margin-left: 40px">Resposta do(a) '.$arrayV1r[$j]['nomeUsuario'].': '.$arrayV1r[$j]['comentComent'].' <form action="forum.php" method="POST">
                                                 <input type="hidden" name="idPostLike" value="'.$arrayV1r[$j]['idComent'].'">
                                                 <input type="hidden" name="tipoLike" value="coment">
                                                 <input type="hidden" name="like" value="1">

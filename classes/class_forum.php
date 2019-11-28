@@ -132,11 +132,8 @@ class Forum{
 
             $consultaUsuario = $this->pdo->query("SELECT nomeUsuario FROM usuario WHERE idUsuario = ".$array[$i]['idUsuario']."");
 
-
             while($linhaUsuario = $consultaUsuario->fetch(PDO::FETCH_ASSOC)){
                 $array[$i]['nomeUsuario'] = $linhaUsuario['nomeUsuario'];
-
-
             }
 
             $i++;
@@ -183,6 +180,13 @@ class Forum{
             $array[$i]['comentComent'] = $linha['comentComent'];
             $array[$i]['dataHoraComent'] = $linha['dataHoraComent'];
             $array[$i]['idUsuario'] = $linha['idUsuario'];
+
+            $consultaUsuario = $this->pdo->query("SELECT nomeUsuario FROM usuario WHERE idUsuario = ".$array[$i]['idUsuario']."");
+
+            while($linhaUsuario = $consultaUsuario->fetch(PDO::FETCH_ASSOC)){
+                $array[$i]['nomeUsuario'] = $linhaUsuario['nomeUsuario'];
+            }
+
             $i++;
         }
         if(isset($array)){
