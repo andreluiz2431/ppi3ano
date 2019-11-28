@@ -6,4 +6,4 @@
 
 *acho que o back-end ta pronto*
 
-***Refazer imagem "paraelo_2.png", fazer ela deitada!***
+***Bah! Não deu galera***
