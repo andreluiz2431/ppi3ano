@@ -69,38 +69,40 @@
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-block">Calcular</button>
                             </form>
+                            <?php
+
+                            include '../classes/class_calculadoras.php';
+
+                            $calculadora = new Calculos();
+
+                            if($_POST){
+                                echo '<br><h4><center>Resultado do campo vazio: '.$calculadora->pui($_POST['p'], $_POST['u'], $_POST['i']).'</center></h4>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <?php
 
-            include '../classes/class_calculadoras.php';
 
-            $calculadora = new Calculos();
+        <!-- Footer -->
+        <footer class="bg-light py-5">
+            <div class="container">
+                <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+            </div>
+        </footer>
 
-            if($_POST){
-                echo 'Resultado do campo vazio: '.$calculadora->pui($_POST['p'], $_POST['u'], $_POST['i']);
-            }
-            ?>
+        <!-- Bootstrap core JavaScript -->
+        <script src="creative/vendor/jquery/jquery.min.js"></script>
+        <script src="creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Footer -->
-            <footer class="bg-light py-5">
-                <div class="container">
-                    <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
-                </div>
-            </footer>
+        <!-- Plugin JavaScript -->
+        <script src="creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="creative/vendor/jquery/jquery.min.js"></script>
-            <script src="creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Plugin JavaScript -->
-            <script src="creative/vendor/jquery-easing/jquery.easing.min.js"></script>
-            <script src="creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-            <!-- Custom scripts for this template -->
-            <script src="js/creative.min.js"></script>
-            </body>
-        </html>
+        <!-- Custom scripts for this template -->
+        <script src="js/creative.min.js"></script>
+    </body>
+</html>
