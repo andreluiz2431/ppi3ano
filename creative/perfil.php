@@ -60,7 +60,7 @@ $usuario->verificarLogado();
                                 <div class="shadow p-3 mb-5 bg-white rounded">
                                     <div style="margin-top: -16%">
                                         <center>
-                                            <img src='../img/branco.png' alt=""; ?>" width='120px' >
+                                            <img src='../img/branco.png' width='120px'>
                                         </center>
                                     </div>
 
@@ -141,7 +141,7 @@ document.formUser.submit();
                                         <div class="form-row">
                                             <div class="col-md-8">
                                                 <h5 class="text-primary">ENDEREÇO DE EMAIL:</h5>
-                                                <h6><?php  ?></h6><!--  COLOCAR O EMAIL QUE ESTA NO BANCO -->
+                                                <h6><?php echo $_SESSION['email']; ?></h6><!--  COLOCAR O EMAIL QUE ESTA NO BANCO -->
                                             </div>
                                             <div class="col-md-2">
                                             </div>
@@ -267,8 +267,11 @@ document.formEmail.submit();
 
 
 
-
+                    </div>
+                </div>
 
                         </body>
+        </div>
+    </body>
                     </html>
 
