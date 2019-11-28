@@ -284,7 +284,7 @@ if(!empty($_POST['user'])){
     $senha2 = $_POST['senha_up'];
     $senha3 = $_POST['senha_up_com'];
 
-
+    $usuario->editarSenha($_SESSION['id'], $senha1, $senha2, $senha3);
 }
 
 ?>

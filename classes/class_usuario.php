@@ -114,8 +114,8 @@ class Usuario{
         }
     }
 
-    public function editarSenha($id, $senhaAtual, $senhaAtual1, $senhaNova){ // TESTAR
-        if($senhaAtual == $senhaAtual1){
+    public function editarSenha($id, $senhaAtual, $senhaNova1, $senhaNova){ // TESTAR
+        if($senhaNova == $senhaNova1){
             //criptografia
             $senhaAtualCriptografada = md5($senhaAtual);
             $senhaNovaCriptografada = md5($senhaNova);
