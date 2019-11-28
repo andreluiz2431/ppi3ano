@@ -143,6 +143,7 @@ $forum = new Forum();
                                             </form>
 
                                             <form action="forum.php" method="POST">
+                                                <input type="hidden" name="tipoDeletar" value="post">
                                                 <input type="hidden" name="idPostDeletar" value="'.$arrayV1[$i]['idPost'].'">
                                                 <button type="submit" class="btn btn-outline-primary">
                                                     <i class="material-icons">
@@ -649,8 +650,11 @@ $forum = new Forum();
 
             if(!empty($_POST['idPostDeletar'])){
                 $idPostDeletar = $_POST['idPostDeletar'];
+                $tipoDeletar = $_POST['tipoDeletar'];
 
-                $forum->
+                $forum->deletarPostagem($idPostDeletar, $tipoDeletar);
+
+                echo '<script>alert("Deletado com sucesso!");</script>';
             }
             ?>
 
