@@ -43,47 +43,55 @@
         <div class="container-fluid">
             <div class="row" >
                 <div class="col-md-3">
-                </div>
-                <div class="col-md-6" >
                     <div style="margin-top: 20%;">
                         <div class="shadow p-3 mb-5 bg-white rounded">
-                            <h3 class="text-primary"><center>Preencha os dados dos resistores de acordo com a imagem:</center></h3>
-                            <br>
+                            <center> <h4 class="text-primary"><b>Circuito paralelo:</b></h4></center>
+                            <p>Caracteriza-se por conter componentes conectados tanto em paralelo quanto em série.</p>
+                            <p>Os cálculos são realizados mesclando as ideias do circuito série e paralelo </p>
+                        </div>
+                    </div>
+
+                        </div>
+                        <div class="col-md-6" >
+                            <div style="margin-top: 20%;">
+                                <div class="shadow p-3 mb-5 bg-white rounded">
+                                    <h3 class="text-primary"><center>Preencha os dados dos resistores de acordo com a imagem:</center></h3>
+                                    <br>
 
 
-                            <center><img src="../creative/circuitos_img/misto_3.png" style="width: 800px"></center>
-                            <form method="post" action="misto.php">
+                                    <center><img src="../creative/circuitos_img/misto_3.png" style="width: 800px"></center>
+                                    <form method="post" action="misto.php">
 
-                                <br>
-                                <input type="number" name="resistor1" placeholder="Resistor 1" class="form-control">
-                                <br>
-                                <input type="number" name="resistor2" placeholder="Resistor 2" class="form-control">
-                                <br>
-
-
-                                <input type="number" name="resistor3" placeholder="Resistor 3" class="form-control">
-                                <br>
-                                <input type="number" name="resistor4" placeholder="Resistor 4" class="form-control">
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-block">Calcular</button>
-                            </form>
+                                        <br>
+                                        <input type="number" name="resistor1" placeholder="Resistor 1" class="form-control">
+                                        <br>
+                                        <input type="number" name="resistor2" placeholder="Resistor 2" class="form-control">
+                                        <br>
 
 
-                            <?php
-                            include '../classes/class_calculadoras.php';
+                                        <input type="number" name="resistor3" placeholder="Resistor 3" class="form-control">
+                                        <br>
+                                        <input type="number" name="resistor4" placeholder="Resistor 4" class="form-control">
+                                        <br>
+                                        <button type="submit" class="btn btn-primary btn-block">Calcular</button>
+                                    </form>
 
-                            $calculadora = new Calculos();
 
-                            if(!empty($_POST['resistor1'])){
-                                $array = $calculadora->resistenciaEquivalenteMista1($_POST['resistor1'], $_POST['resistor2'], $_POST['resistor3'], $_POST['resistor4']);
+                                    <?php
+                                    include '../classes/class_calculadoras.php';
 
-                                echo '<br><h4><center>Resistência equivalente: '.$calculadora->resistenciaEquivalenteMista2($array[0], $array[1]).'</center></h4>';
-                            }
-                            ?>
+                                    $calculadora = new Calculos();
+
+                                    if(!empty($_POST['resistor1'])){
+                                        $array = $calculadora->resistenciaEquivalenteMista1($_POST['resistor1'], $_POST['resistor2'], $_POST['resistor3'], $_POST['resistor4']);
+
+                                        echo '<br><h4><center>Resistência equivalente: '.$calculadora->resistenciaEquivalenteMista2($array[0], $array[1]).'</center></h4>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
+                </body>
+            </html>

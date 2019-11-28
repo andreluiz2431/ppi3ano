@@ -1,6 +1,6 @@
 <html>
     <head>
-       <title>Calculadora Série</title>
+        <title>Calculadora Série</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -42,48 +42,60 @@
         <div class="container-fluid">
             <div class="row" >
                 <div class="col-md-4">
-                </div>
-                <div class="col-md-4" >
                     <div style="margin-top: 20%;">
                         <div class="shadow p-3 mb-5 bg-white rounded">
-                            <h3 class="text-primary"><center>Adicione resistores para seu circuito série: </center></h3>
+                            <center> <h4 class="text-primary"><b>Circuito série:</b></h4></center>
+                            <p>Caracteriza-se por ter apenas um caminho para a corrente elétrica, com os resistores associados em sequência.</p>
+                            <p> A corrente elétrica(A) é a mesma para todos os resistores do circuito;</p>
+                            <p> A tensão(U) é divida entre os resistores;</p>
+                            <p> O cálculo da resistência equivalente é feita a partir da soma dos valores dos resistores.</p>
+                        </div>
+                    </div>
 
-                            <?php
-                            $pagina = 'serie';
 
-                            include '../adicionar_resistores.php';
 
-                            include '../classes/class_calculadoras.php';
+                        </div>
+                        <div class="col-md-4" >
+                            <div style="margin-top: 20%;">
+                                <div class="shadow p-3 mb-5 bg-white rounded">
+                                    <h3 class="text-primary"><center>Adicione resistores para seu circuito série: </center></h3>
 
-                            $calculadora = new Calculos();
+                                    <?php
+                                    $pagina = 'serie';
 
-                            if(!empty($c)){
-                                echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
-                            }
-                            ?>
+                                    include '../adicionar_resistores.php';
+
+                                    include '../classes/class_calculadoras.php';
+
+                                    $calculadora = new Calculos();
+
+                                    if(!empty($c)){
+                                        echo 'Resistência equivalente: '.$calculadora->resistenciaEquivalenteSerie($c);
+                                    }
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Footer -->
-            <footer class="bg-light py-5">
-                <div class="container">
-                    <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
-                </div>
-            </footer>
+                <!-- Footer -->
+                <footer class="bg-light py-5">
+                    <div class="container">
+                        <div class="small text-center text-muted">Copyright &copy; 2019 - FarPhysic</div>
+                    </div>
+                </footer>
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="creative/vendor/jquery/jquery.min.js"></script>
-            <script src="creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- Bootstrap core JavaScript -->
+                <script src="creative/vendor/jquery/jquery.min.js"></script>
+                <script src="creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Plugin JavaScript -->
-            <script src="creative/vendor/jquery-easing/jquery.easing.min.js"></script>
-            <script src="creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+                <!-- Plugin JavaScript -->
+                <script src="creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+                <script src="creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-            <!-- Custom scripts for this template -->
-            <script src="js/creative.min.js"></script>
+                <!-- Custom scripts for this template -->
+                <script src="js/creative.min.js"></script>
 
 
-    </body>
-</html>
+                </body>
+            </html>
