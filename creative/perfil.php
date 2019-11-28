@@ -54,20 +54,17 @@
                                     <div>
                                         <hr>
                                     </div>
-
-
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-8">
                                                 <h5 class="text-primary">NOME DE USUARIO:</h5>
-                                                <h6><?php ?></h6> <!-- MUDAR AQUI PARA O CARINHA QUE É  -->
+                                                <h6><?php ?></h6> <!-- MUDAR AQUI PARA O CARINHA QUE É  NOME ATUAL NO CASO  -->
                                             </div>
                                             <div class="col-md-2">
 
                                             </div>
                                             <div class="col-md-2">
                                                 <div style="margin-top:15px;"> <a class="text-" data-toggle="collapse" href="#collapseUser" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="material-icons">edit</i></a></div>
-
                                             </div>
                                         </div>
                                         <div class="collapse" id="collapseUser">
@@ -76,45 +73,45 @@
                                                     <div class="form-group">
                                                         <label>Insira um novo nome de usuario:</label>
                                                         <input type="text" name="user" id="user" class="form-control" maxlength="30" required="true">
-                                                        <?php
+                                                        <?php /*
                                                         $res2 = "<div id='resModalUser'align='center'></div>";
-                                                        echo "<b>".$res2."</b>";
+                                                        echo "<b>".$res2."</b>"; */ // AQUI É A RESPOSTA DO JAVASCRPT
                                                         ?>
+                                                        <!--    AQUI TEM ESSA FUÇÃO PRA COISAR O AJAX  -->
                                                         <p class="text-muted">* Maximo 30 caracteres.</p>
                                                         <button type="button" id="salvarUser"  class="btn btn-primary"  onclick="verificaUser()">Salvar</button>
                                                     </div>
                                                 </form>
+                                                <!--  <script>
+var user = $("#user");  // Verificação do usuario
+user.blur(function() {
+$.ajax({
+url: 'verificaUpUser.php',
+type: 'POST',
+data:{"user" : user.val()},
+success: function(data) {
 
-                                                <script>
-                                                    var user = $("#user");  // Verificação do usuario
-                                                    user.blur(function() {
-                                                        $.ajax({
-                                                            url: 'verificaUpUser.php',
-                                                            type: 'POST',
-                                                            data:{"user" : user.val()},
-                                                            success: function(data) {
+data = $.parseJSON(data);
+$("#resModalUser").text(data.user);
+}
+});
+});
 
-                                                                data = $.parseJSON(data);
-                                                                $("#resModalUser").text(data.user);
-                                                            }
-                                                        });
-                                                    });
+function verificaUser(){
 
-                                                    function verificaUser(){
-
-                                                        var valorDaDivUser = $("#resModalUser").text();
-
-
-                                                        if(valorDaDivUser == 'Este nome de usuário já foi usado'){
-
-                                                            alert('Você precisa escolher outro nome de usuario');
-                                                        } else if (valorDaDivUser =='Nome de usuario disponível') {
-                                                            document.formUser.submit();
-
-                                                        }}
+var valorDaDivUser = $("#resModalUser").text();
 
 
-                                                </script>
+if(valorDaDivUser == 'Este nome de usuário já foi usado'){
+
+alert('Você precisa escolher outro nome de usuario');
+} else if (valorDaDivUser =='Nome de usuario disponível') {
+document.formUser.submit();
+
+}}
+
+
+</script>--> <!-- NAO SEI PQ TA CAGADO ASISIM MAS FDS -->
 
 
                                             </div>
@@ -123,7 +120,6 @@
                                         <hr>
                                     </div> <!-- USER -->
 
-
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-8">
@@ -131,8 +127,6 @@
                                                 <h6><?php  ?></h6><!--  COLOCAR O EMAIL QUE ESTA NO BANCO -->
                                             </div>
                                             <div class="col-md-2">
-
-
                                             </div>
                                             <div class="col-md-2">
                                                 <div style="margin-top:15px;" >
@@ -149,16 +143,49 @@
                                                         <label>Insira um novo endereço de email:</label>
                                                         <input type="email" name="email" id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="true">
 
+                                                        <!--    RESPOSTA DO AJAX  -->
+                                                        <?php /*
+                                                        $resEmail = "<div id='resEmail'align='center'></div>";
+                                                        echo "<b>".$resEmail."</b>"; */
+                                                        ?>
+
+
                                                         <p class="text-muted">* Maximo 100 caracteres.</p>
-                                                        <button type="button" id="salvarEmail"  class="btn btn-primary" onclick="verificaEmail()" >Salvar</button>
+                                                        <button type="button" id="salvarEmail"  class="btn btn-primary" onclick="verificaEmail()" >Salvar</button> <!-- ESSAS FUNÇÃO QUE EU NEM SEI MAIS OQ FAZ COM O AAJAX -->
+
                                                     </div>
                                                 </form>
+                                                <!--  <script>
+var email = $("#email"); // verificação do email
+email.blur(function() {
+$.ajax({
+url: 'verificaEmail.php',
+type: 'POST',
+data:{"email" : email.val()},
+success: function(data) {
 
+data = $.parseJSON(data);
+$("#resEmail").text(data.email);
+}
+});
+});
+
+function verificaEmail(){
+var valorDaDivEmail = $("#resEmail").text();
+
+if(valorDaDivEmail == 'Este email já está cadastrado'){
+alert('Você precisa escolher outro endereço de email');
+
+} else if (valorDaDivEmail == 'E-mail valido') {
+document.formEmail.submit();
+}}
+</script> --> <!-- AJAAX FDP AQUI  -->
 
                                             </div>
                                         </div>
                                         <hr>
                                     </div><!--  Email -->
+
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-8">
@@ -174,20 +201,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--           ARRUAMAR AQUI A PAGINA PHP QUE A SENHA VAI IR  -->
                                         <div class="collapse" id="collapseSenha">
                                             <div class="card card-body">
                                                 <form name="formSenha" id="formSenha" action="alterarSenha.php" method="POST">
                                                     <div class="form-group">
                                                         <label>Insira sua senha atual:</label>
                                                         <input type="password" name="senha_at" id="senha_at" class="form-control" maxlength="32">
-
-
-                                                        <!--  RESPOSTA DO AJAX -->
-                                                        <?php /*
-                                                $resSenha = "<div id='resSenha'align='center'></div>";
-                                                echo "<b>".$resSenha."</b>";
-                                                */ ?>
-
 
                                                         <label>Insira sua nova senha:</label>
                                                         <input type="password" name="senha_up" id="senha_up" class="form-control" maxlength="32" required="true">
@@ -197,14 +217,13 @@
 
                                                         <p class="text-muted">* Maximo 32 caracteres.</p>
                                                         <button type="submit" id="salvarUser"  class="btn btn-primary">Salvar</button>
-                                                    </div> <!-- Colapse da senha -->
+                                                    </div>
                                                 </form>
                                             </div>
 
                                         </div>
 
-                                    </div> <!-- Senha -->
-
+                                    </div><!-- Senha -->
                                 </div>
                             </div>
                         </div>
