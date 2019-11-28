@@ -60,8 +60,7 @@ $usuario->verificarLogado();
                                 <div class="shadow p-3 mb-5 bg-white rounded">
                                     <div style="margin-top: -16%">
                                         <center>
-                                            <img src='../img/branco.png' width='120px'>
-                                        </center>
+                                            <img src='cara.jpeg' alt='Deu pau' class='rounded-circle' width='120px' ></center>
                                     </div>
 
                                     <div class="spinner-border" role="status">
