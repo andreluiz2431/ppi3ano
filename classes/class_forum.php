@@ -75,7 +75,7 @@ class Forum{
                 return 'Funcionou';
             }
         }else{
-            return 'ja curtida';
+            $this->deslike($idUsuario, $idPostComent, $tipo, $like);
         }
 
     }
@@ -85,7 +85,9 @@ class Forum{
         // $like => se é CURTIR ou NÃO GOSTEI
         $this->conexaoBD();
 
-        $stmt = $this->pdo->query('DELETE FROM like WHERE (idUsuario = '.$idUsuario.') AND (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = "'.$like.'")');
+        $stmt = $this->pdo->query('DELETE FROM curtida WHERE (idUsuario = '.$idUsuario.') AND (idPostComent = '.$idPostComent.') AND (tipoLike = "'.$tipo.'") AND (likeLike = "'.$like.'")');
+
+        echo "<script>window.location.href= '../creative/forum.php';</script>";
 
         return 'Deletado';
     }
