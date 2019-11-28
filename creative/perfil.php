@@ -1,4 +1,12 @@
+<?php
 
+
+include '../classes/class_usuario.php';
+
+$usuario = new Usuario();
+
+$usuario->verificarLogado();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -67,7 +75,7 @@
                                         <div class="form-row">
                                             <div class="col-md-8">
                                                 <h5 class="text-primary">NOME DE USUARIO:</h5>
-                                                <h6><?php ?></h6> <!-- MUDAR AQUI PARA O CARINHA QUE É  NOME ATUAL NO CASO  -->
+                                                <h6><?php echo $_SESSION['usuario']; ?></h6> <!-- MUDAR AQUI PARA O CARINHA QUE É  NOME ATUAL NO CASO  -->
                                             </div>
                                             <div class="col-md-2">
 

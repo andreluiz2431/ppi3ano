@@ -108,8 +108,9 @@ class Usuario{
     }
 
     public function verificarLogado(){ // TESTAR             Instanciar em todas as telas menos no Login e Cadastro
-        if(empty($_SESSION['usuario'])){
-            echo '<a class="nav-link js-scroll-trigger" href="../sb-admin-2/index.php">Login</a>';
+        session_start();
+        if(!isset($_SESSION['usuario'])){
+            echo "<script>window.location.href= '../sb-admin-2/index.php';</script>";
         }
     }
 

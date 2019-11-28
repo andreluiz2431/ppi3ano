@@ -21,7 +21,7 @@
                 </li>
                 <li class="nav-item">
                     <?php
-                    session_start();
+
                     if(empty($_SESSION['usuario'])){
                         echo '<a class="nav-link js-scroll-trigger" href="../sb-admin-2/index.php">Login</a>';
                     }else{
