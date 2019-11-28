@@ -12,15 +12,23 @@ class Forum{
         if($tipo == 'post'){ // deletar os comentarios primeiro
             $this->conexaoBD();
 
+            $deletandoL = $this->pdo->query('DELETE FROM curtida WHERE (idPostComent = '.$id.') AND (tipoLike = "'.$tipo.'")');
+
             $deletandoC = $this->pdo->query('DELETE FROM coment WHERE idPost = '.$id.'');
 
             $deletandoP = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idPost = '.$id.'');
+
+            echo "<script>window.location.href= '../creative/forum.php';</script>";
 
             return 'Postagem e seus comentarios deletados';
         }else{
             $this->conexaoBD();
 
-            $deletando = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idPost = '.$id.'');
+            $deletandoL = $this->pdo->query('DELETE FROM curtida WHERE (idPostComent = '.$id.') AND (tipoLike = "'.$tipo.'")');
+
+            $deletando = $this->pdo->query('DELETE FROM '.$tipo.' WHERE idComent = '.$id.'');
+
+            echo "<script>window.location.href= '../creative/forum.php';</script>";
 
             return 'Comentario deletada';
         }

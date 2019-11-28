@@ -189,6 +189,16 @@ $forum = new Forum();
                                                 </button>
                                             </form>
 
+                                            <form action="forum.php" method="POST">
+                                                <input type="hidden" name="tipoDeletar" value="coment">
+                                                <input type="hidden" name="idPostDeletar" value="'.$arrayV1r[$j]['idComent'].'">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="material-icons">
+                                                        delete
+                                                    </i>
+                                                </button>
+                                            </form>
+
                                              Likes: '.$forum->quantLikes($arrayV1r[$j]['idComent'], 'coment', 1).' Deslikes: '.$forum->quantLikes($arrayV1r[$j]['idComent'], 'coment', 0).'</div>';
                                                 $j++;
                                                 if(empty($arrayV1r[$j])){
